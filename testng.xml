@@ -1,0 +1,7 @@
+<suite name="Swarmio Hive">
+    <test name="Check Title of page">
+        <classes>
+            <class name="HomePageSmokeTest"/>
+        </classes>
+    </test>
+</suite>
