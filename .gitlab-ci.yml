@@ -1,16 +1,18 @@
 image: rvancea/maven-chrome-jdk15:latest
-
-job:
-  tags:
-    - cluster
-    - kubernetes
+  
 
 build:
   stage: build
   script:
     - mvn compile
-
+  tags:
+    - cluster
+    - kubernetes
+    
 test:
   stage: test
   script:
     -mvn clean test
+  tags:
+    - cluster
+    - kubernetes
