@@ -1,5 +1,10 @@
 image: rvancea/maven-chrome-jdk15:latest
 
+job:
+  tags:
+    - cluster
+    - kubernetes
+
 build:
   stage: build
   script:
