@@ -1,4 +1,4 @@
-image: rvancea/maven-chrome-jdk15:latest
+image: markhobson/maven-chrome:jdk-15
   
 
 build:
