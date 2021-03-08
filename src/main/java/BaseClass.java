@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseClass {
 
     WebDriver driver;
@@ -15,6 +17,7 @@ public class BaseClass {
         ChromeOptions opt = new ChromeOptions();
         opt.setHeadless(true);
         driver = new ChromeDriver(opt);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 

@@ -1,5 +1,5 @@
 image: markhobson/maven-chrome:jdk-15
-  
+
 
 build:
   stage: build
@@ -8,7 +8,13 @@ build:
   tags:
     - cluster
     - kubernetes
-    
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml
+
 test:
   stage: test
   script:
@@ -16,3 +22,9 @@ test:
   tags:
     - cluster
     - kubernetes
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml

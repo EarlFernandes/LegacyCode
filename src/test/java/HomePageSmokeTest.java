@@ -12,6 +12,7 @@
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
             driver.get("https://qa-hive-swarmio.swarmio.gg/");
+            driver.manage().window().maximize();
             String ActualTitle = driver.getTitle();
             String ExpectedTitle = "Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
