@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class BaseClass {
 
     WebDriver driver;
+    static String username = "earl@swarmio.media"; // Your username
+    static String authkey = "u0e572444a5c9073";
 
     @BeforeClass
     public void setupApplication() {

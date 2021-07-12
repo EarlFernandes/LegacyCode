@@ -1,5 +1,7 @@
 image: markhobson/maven-chrome:jdk-15
-
+variables:
+  CBT_USERNAME: earl@swarmio.media
+  CBT_AUTHKEY: u0e572444a5c9073
 
 build:
   stage: build
