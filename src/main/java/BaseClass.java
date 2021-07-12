@@ -10,16 +10,19 @@ import java.util.concurrent.TimeUnit;
 public class BaseClass {
 
     WebDriver driver;
-    static String username = "earl@swarmio.media"; // Your username
-    static String authkey = "u0e572444a5c9073";
+    private CBTAPI api;
 
     @BeforeClass
     public void setupApplication() {
+        String username = System.getenv("CBTUSRNAME").replaceAll("@", "%40");
+        String authkey = System.getenv("CBTAUTH");
+        System.out.println(username);
         WebDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
         opt.setHeadless(true);
         driver = new ChromeDriver(opt);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        api = new CBTAPI(username, authkey);
 
     }
 
