@@ -27,7 +27,7 @@ test:
       junit:
         - target/surefire-reports/TEST-*.xml
         - target/failsafe-reports/TEST-*.xml
-functional_tests
+functional_tests:
   stage: functional
   script:
     - echotesting $ARCHITECTURE $TARGET $VERSION
