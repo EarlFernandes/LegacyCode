@@ -1,7 +1,4 @@
 image: markhobson/maven-chrome:jdk-15
-variables:
-  CBT_USERNAME: earl@swarmio.media
-  CBT_AUTHKEY: u0e572444a5c9073
 
 build:
   stage: build
@@ -30,3 +27,10 @@ test:
       junit:
         - target/surefire-reports/TEST-*.xml
         - target/failsafe-reports/TEST-*.xml
+functional_tests
+  stage: functional
+  script:
+    - echotesting $ARCHITECTURE $TARGET $VERSION
+  parallel:
+    - ENVIRONMENT: [windows, mac, ios, android]
+      BROWSER: [chrome, safari, ie]
