@@ -1,5 +1,9 @@
 image: markhobson/maven-chrome:jdk-15
 
+stages:
+  - build
+  - test
+
 build:
   stage: build
   script:
