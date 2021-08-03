@@ -3,7 +3,7 @@ image: markhobson/maven-chrome:jdk-15
 before_script:
   - |
     cd /builds/earl/jmeter-tests
-    echo 'export LT_USERNAME=earl@swarmio.media' >> ~/.bashrc
+    echo 'export LT_USERNAME=earlswarmio' >> ~/.bashrc
     echo 'export LT_ACCESS_KEY=4hear2v5UZ2nAJ10bsBzjPrxYJgqyEa8T1oa7dvfCL2ZFJtdLG' >> ~/.bashrc
 
 stages:

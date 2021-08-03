@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -38,7 +39,7 @@ public class PreLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[@id='app']/section/main/section/div/section[2]/div[2]/div/a/span[1]")
     WebElement JoinNow;
 
-    public PreLoginButtons(WebDriver driver) {
+    public PreLoginButtons(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

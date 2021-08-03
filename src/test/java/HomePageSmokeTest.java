@@ -30,8 +30,8 @@
             pgeobj.Clicklogin();
             System.out.println(pgeobj.Clicklogin());
             pgeobj.ClickRegister();
-            System.out.println(pgeobj.ClickRegister());
             pgeobj.ClickChallengesViewMore();
+            System.out.println(pgeobj.ClickRegister());
             System.out.println(pgeobj.ClickChallengesViewMore());
             pgeobj.ClickTournamentsViewMore();
             System.out.println(pgeobj.ClickTournamentsViewMore());
