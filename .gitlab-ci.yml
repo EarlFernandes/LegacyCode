@@ -1,4 +1,4 @@
-image: maven:3.3.9-jdk-8
+image: registry.swarmio.gg/matrix/ops/docker/docker-sbt:jdk11-1.0
 
 before_script:
   - |
