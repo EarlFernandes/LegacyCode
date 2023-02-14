@@ -2,7 +2,9 @@ image: maven:3.3.9-jdk-8
 
 before_script:
   - |
-    cd /builds/earl/jmeter-tests
+    until docker ps; do sleep 3; done
+    cd $CI_BUILDS_DIR
+    # cd /builds/earl/jmeter-tests
     echo 'export LT_USERNAME=earlswarmio' >> ~/.bashrc
     echo 'export LT_ACCESS_KEY=4hear2v5UZ2nAJ10bsBzjPrxYJgqyEa8T1oa7dvfCL2ZFJtdLG' >> ~/.bashrc
 
