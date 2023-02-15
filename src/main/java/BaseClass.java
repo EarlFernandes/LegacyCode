@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
 
-
     public RemoteWebDriver driver;
 
     @BeforeClass
@@ -37,17 +36,16 @@ public class BaseClass {
 
         System.out.println(driver.toString());
 
-        /*WebDriverManager.chromedriver().setup();
-        ChromeOptions opt = new ChromeOptions();
-        opt.setHeadless(true);
-        driver = new ChromeDriver(opt);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);*/
+        /*
+         * WebDriverManager.chromedriver().setup(); ChromeOptions opt = new
+         * ChromeOptions(); opt.setHeadless(true); driver = new ChromeDriver(opt);
+         * driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+         */
 
     }
 
     @AfterClass
-    public void closeApplication()
-    {
+    public void closeApplication() {
         driver.quit();
     }
 }
