@@ -20,6 +20,7 @@ public class BaseClass {
         WebDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("headless");
+        opt.addArguments("remote-debugging-port=9222");  // rip from https://stackoverflow.com/questions/56637973/how-to-fix-selenium-devtoolsactiveport-file-doesnt-exist-exception-in-python
 //        opt.addArguments("--ignore-certificate-errors");
 //        opt.addArguments("--ignore-ssl-errors=yes");
         driver = new ChromeDriver(opt);
