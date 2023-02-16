@@ -1,13 +1,26 @@
 image: maven:3.8.7-openjdk-18-slim
 
+variables:
+  DOCKER_REGISTRY: registry.swarmio.gg/qa
+  BUILDER_IMAGE: $DOCKER_REGISTRY/jmeter-tests:builder
+
 stages:
+  - pre-build
   - test
 
+build-builder:
+  stage: pre-build
+  script:
+    - docker build --no-cache --pull -t $BUILDER_IMAGE . -f builder.Dockerfile
+    - docker push $BUILDER_IMAGE
+  when: manual
+
+
 test:
+  image: registry.swarmio.gg/qa/jmeter-tests:builder #use a custom image that we've built from the pre-step
   stage: test
   script:
     - mvn clean test
-  tags:
   artifacts:
     when: always
     reports:
