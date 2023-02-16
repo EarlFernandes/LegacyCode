@@ -1,7 +1,7 @@
 image: maven:3.8.7-openjdk-18-slim
 
 variables:
-  DOCKER_REGISTRY: registry.swarmio.gg/qa
+  DOCKER_REGISTRY: registry.swarmio.gg/earl
   BUILDER_IMAGE: $DOCKER_REGISTRY/jmeter-tests:builder
 
 stages:
@@ -17,7 +17,7 @@ build-builder:
 
 
 test:
-  image: registry.swarmio.gg/qa/jmeter-tests:builder #use a custom image that we've built from the pre-step
+  image: registry.swarmio.gg/earl/jmeter-tests:builder #use a custom image that we've built from the pre-step
   stage: test
   script:
     - mvn clean test
