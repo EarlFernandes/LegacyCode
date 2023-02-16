@@ -1,5 +1,3 @@
-image: maven:3.8.7-openjdk-18-slim
-
 variables:
   DOCKER_REGISTRY: registry.swarmio.gg/earl
   BUILDER_IMAGE: $DOCKER_REGISTRY/jmeter-tests:builder
