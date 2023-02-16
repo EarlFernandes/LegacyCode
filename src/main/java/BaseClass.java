@@ -23,7 +23,7 @@ public class BaseClass {
 //        opt.addArguments("--ignore-certificate-errors");
 //        opt.addArguments("--ignore-ssl-errors=yes");
         driver = new ChromeDriver(opt);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
 
