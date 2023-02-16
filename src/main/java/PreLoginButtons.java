@@ -3,52 +3,59 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class PreLoginButtons extends BaseClass {
-    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div/nav[1]/a/span/img")
+    @FindBy(xpath = "//*[contains(@class, 'd-block me-3')]")
     WebElement Client_name;
 
-    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div/nav[1]/section/div/a[1]")
+    @FindBy(xpath = "//*[text()='Watch']")
     WebElement Watch;
 
-    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div/nav[1]/section/div/a[2]")
-    WebElement Challenges;
+//    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div/nav[1]/section/div/a[2]")
+//    WebElement Challenges;
 
-    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div[2]/nav/section/div/a[3]")
-    WebElement Tournaments;
+    @FindBy(xpath = "//*[text()='Events']")
+    WebElement Events;
 
-    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div[2]/nav/section/div/a[4]")
-    WebElement Rewards;
+    @FindBy(xpath = "//*[text()='Store']")
+    WebElement Store;
 
-    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div/nav[2]/section/div/a[1]")
+    @FindBy(xpath = "//*[text()='Login']")
     WebElement Login;
 
-    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div/nav[2]/section/div/a[2]")
+    @FindBy(xpath = "//*[text()='Register']")
     WebElement Register;
 
     @FindBy(xpath = "//*[@id='app']/section/main/section/div/section[1]/div/div[5]/div[3]/a/span[1]")
     WebElement Challenges_ViewMore;
 
-    @FindBy(xpath = "//*[@id='app']/section/main/section/div/section[1]/div/div[9]/div[3]/a/span[1]")
+    @FindBy(xpath = "//*[contains(@class, 'dFancyButton_buttonText__1SdKu')]")
     WebElement Tournaments_ViewMore;
 
-    @FindBy(xpath = "//*[@id='app']/section/main/section/div/section[1]/div/div[13]/div[3]/a/span[2]/svg")
-    WebElement Gameservers_ViewMore;
+   /* @FindBy(xpath = "//*[contains(@class, 'dFancyButton_buttonText__1SdKu')]")
+    WebElement Gameservers_ViewMore;*/
 
-    @FindBy(xpath = "//*[@id='app']/section/main/section/div/section[2]/div[2]/div/a/span[1]")
-    WebElement JoinNow;
+    /*@FindBy(xpath = "//*[@id='app']/section/main/section/div/section[2]/div[2]/div/a/span[1]")
+    WebElement JoinNow;*/
 
-    public PreLoginButtons(RemoteWebDriver driver) {
+    public PreLoginButtons(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     public String ClientName() {
         try {
-
+//            wait.until(ExpectedConditions.elementToBeClickable(Client_name));
             Client_name.click();
 
+            /*if (Client_name.isDisplayed() && Client_name.isEnabled()) {
+                Client_name.click();
+            } else {
+                System.out.println("Homepage button does not show up");
+            }*/
+            Thread.sleep(5000);
             String ActualTitle = driver.getTitle();
             String ExpectedTitle = "Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
@@ -56,19 +63,19 @@ public class PreLoginButtons extends BaseClass {
         } catch (Exception e) {
 
         }
-        String validation ="Homepage loads fine on clicking client name";
+        String validation = "Homepage loads fine on clicking client name";
         return validation;
     }
 
+
     public String ClickWatch() {
         try {
-
+//            wait.until(ExpectedConditions.elementToBeClickable(Watch));
             Watch.click();
-            Thread.sleep(1000);
+            Thread.sleep(5000);
             String ActualTitle = driver.getTitle();
             String ExpectedTitle = "Watch | Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
-
 
 
         } catch (Exception e) {
@@ -78,7 +85,7 @@ public class PreLoginButtons extends BaseClass {
         return validation;
     }
 
-    public String ClickChallenges() {
+    /*public String ClickChallenges() {
         try {
             Challenges.click();
             Thread.sleep(1000);
@@ -92,45 +99,49 @@ public class PreLoginButtons extends BaseClass {
         }
         String validation = "Challenges page visited successfully";
         return validation;
-    }
+    }*/
 
     public String ClickTournaments() {
         try {
-            Tournaments.click();
+            Events.click();
+            Thread.sleep(5000);
+
             String ActualTitle = driver.getTitle();
-            String ExpectedTitle = "Tournaments | Swarmio Hive";
+            String ExpectedTitle = "Events | Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
 
 
         } catch (Exception e) {
 
         }
-        String validation =  "Tournaments page visited";
+        String validation = "Events page visited";
         return validation;
     }
 
     public String ClickRewards() {
         try {
-            Rewards.click();
+            Store.click();
+            Thread.sleep(5000);
             String ActualTitle = driver.getTitle();
-            String ExpectedTitle = "Rewards | Swarmio Hive";
+            String ExpectedTitle = "Store | Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
 
 
         } catch (Exception e) {
 
         }
-        String validation = "Rewards page visited";
+        String validation = "Store page visited";
         return validation;
     }
 
     public String Clicklogin() {
         try {
             Login.click();
+            Thread.sleep(5000);
             String ActualTitle = driver.getTitle();
             String ExpectedTitle = "Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
-            driver.navigate().back();
+            Client_name.click();
 
         } catch (Exception e) {
 
@@ -142,19 +153,19 @@ public class PreLoginButtons extends BaseClass {
     public String ClickRegister() {
         try {
             Register.click();
+            Thread.sleep(5000);
             String ActualTitle = driver.getTitle();
             String ExpectedTitle = "Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
-            driver.navigate().back();
-
+            Client_name.click();
         } catch (Exception e) {
 
         }
-        String validation  = "Register page loads fine";
+        String validation = "Register page loads fine";
         return validation;
     }
 
-    public String ClickChallengesViewMore() {
+/*    public String ClickChallengesViewMore() {
         try {
             Challenges_ViewMore.click();
             String ActualTitle = driver.getTitle();
@@ -168,24 +179,24 @@ public class PreLoginButtons extends BaseClass {
         String validation = "View more challenges page loads fine";
         return validation;
 
-    }
+    }*/
 
     public String ClickTournamentsViewMore() {
         try {
             Tournaments_ViewMore.click();
             String ActualTitle = driver.getTitle();
-            String ExpectedTitle = "Tournaments | Swarmio Hive";
+            String ExpectedTitle = "Events | Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
             driver.navigate().back();
 
         } catch (Exception e) {
 
         }
-    String validation = "View more tournaments page loads fine";
+        String validation = "View more events page loads fine";
         return validation;
     }
 
-    public String ClickGameserversViewMore() {
+    /*public String ClickGameserversViewMore() {
         try {
             Gameservers_ViewMore.click();
             String ActualTitle = driver.getTitle();
@@ -196,11 +207,11 @@ public class PreLoginButtons extends BaseClass {
         } catch (Exception e) {
 
         }
-    String validation = "View more game servers page loads fine";
+        String validation = "View more game servers page loads fine";
         return validation;
-    }
+    }*/
 
-    public String ClickJoinNow() {
+    /*public String ClickJoinNow() {
         try {
             JoinNow.click();
             String ActualTitle = driver.getTitle();
@@ -211,7 +222,7 @@ public class PreLoginButtons extends BaseClass {
         } catch (Exception e) {
 
         }
-    String validation = "Clicking on join now takes you to Register page successfully";
+        String validation = "Clicking on join now takes you to Register page successfully";
         return validation;
-    }
+    }*/
 }

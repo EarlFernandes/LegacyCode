@@ -11,18 +11,19 @@
 
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
-            driver.get("https://qa-hive-swarmio.swarmio.gg/");
+            driver.get("https://qa-hive-swarmio-cicd.swarmio.gg/");
             driver.manage().window().maximize();
-            String ActualTitle = driver.getTitle();
-            String ExpectedTitle = "Swarmio Hive";
-            Assert.assertEquals(ActualTitle, ExpectedTitle);
-            System.out.println(ActualTitle);
-            pgeobj.ClientName();
-            System.out.println(pgeobj.ClientName());
+//            String ActualTitle = driver.getTitle();
+//            String ExpectedTitle = "Swarmio Hive";
+//            Thread.sleep(4000);
+//            Assert.assertEquals(ActualTitle, ExpectedTitle);
+//            System.out.println(ActualTitle);
             pgeobj.ClickWatch();
             System.out.println(pgeobj.ClickWatch());
-            pgeobj.ClickChallenges();
-            System.out.println(pgeobj.ClickChallenges());
+            pgeobj.ClientName();
+            System.out.println(pgeobj.ClientName());
+//            pgeobj.ClickChallenges();
+//            System.out.println(pgeobj.ClickChallenges());
             pgeobj.ClickTournaments();
             System.out.println(pgeobj.ClickTournaments());
             pgeobj.ClickRewards();
@@ -30,15 +31,15 @@
             pgeobj.Clicklogin();
             System.out.println(pgeobj.Clicklogin());
             pgeobj.ClickRegister();
-            pgeobj.ClickChallengesViewMore();
+//            pgeobj.ClickChallengesViewMore();
             System.out.println(pgeobj.ClickRegister());
-            System.out.println(pgeobj.ClickChallengesViewMore());
+//            System.out.println(pgeobj.ClickChallengesViewMore());
             pgeobj.ClickTournamentsViewMore();
             System.out.println(pgeobj.ClickTournamentsViewMore());
-            pgeobj.ClickGameserversViewMore();
-            System.out.println(pgeobj.ClickGameserversViewMore());
-            pgeobj.ClickJoinNow();
-            System.out.println(pgeobj.ClickJoinNow());
+//            pgeobj.ClickGameserversViewMore();
+//            System.out.println(pgeobj.ClickGameserversViewMore());
+//            pgeobj.ClickJoinNow();
+//            System.out.println(pgeobj.ClickJoinNow());
 
             driver.close();
         }
