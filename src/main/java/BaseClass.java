@@ -19,7 +19,7 @@ public class BaseClass {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
-//        opt.addArguments("headless");
+        opt.addArguments("headless");
 //        opt.addArguments("--ignore-certificate-errors");
 //        opt.addArguments("--ignore-ssl-errors=yes");
         driver = new ChromeDriver(opt);
