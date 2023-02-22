@@ -3,6 +3,7 @@
         <classes>
             <class name="HomePageSmokeTest"/>
             <class name="LoginTest"/>
+            <class name="CreateTeam"/>
         </classes>
     </test>
 </suite>
