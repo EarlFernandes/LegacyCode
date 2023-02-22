@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseClass {
 
     WebDriver driver;
-//    WebDriverWait wait;
+    WebDriverWait wait;
 
     @BeforeClass
     public void setupApplication() {

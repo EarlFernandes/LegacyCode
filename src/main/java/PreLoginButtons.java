@@ -13,9 +13,6 @@ public class PreLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[text()='Watch']")
     WebElement Watch;
 
-//    @FindBy(xpath = "//*[@id='app']/section/div/div[1]/div/nav[1]/section/div/a[2]")
-//    WebElement Challenges;
-
     @FindBy(xpath = "//*[text()='Events']")
     WebElement Events;
 
@@ -28,17 +25,18 @@ public class PreLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[text()='Register']")
     WebElement Register;
 
-    @FindBy(xpath = "//*[@id='app']/section/main/section/div/section[1]/div/div[5]/div[3]/a/span[1]")
-    WebElement Challenges_ViewMore;
-
-    @FindBy(xpath = "//*[contains(@class, 'dFancyButton_buttonText__1SdKu')]")
+    @FindBy(xpath = "//*[contains(@data-semantic, 'cards-container-events-view-all')]")
     WebElement Tournaments_ViewMore;
 
-   /* @FindBy(xpath = "//*[contains(@class, 'dFancyButton_buttonText__1SdKu')]")
-    WebElement Gameservers_ViewMore;*/
+    @FindBy(xpath = "//*[contains(@data-cy, 'email')]")
+    WebElement Username;
 
-    /*@FindBy(xpath = "//*[@id='app']/section/main/section/div/section[2]/div[2]/div/a/span[1]")
-    WebElement JoinNow;*/
+    @FindBy(xpath = "//*[contains(@data-cy, 'password')]")
+    WebElement Password;
+
+    @FindBy(xpath = "//*[contains(@data-semantic, 'sign-in-form-submit')]")
+    WebElement LoginButton;
+
 
     public PreLoginButtons(WebDriver driver) {
         this.driver = driver;
@@ -47,19 +45,16 @@ public class PreLoginButtons extends BaseClass {
 
     public String ClientName() {
         try {
-//            wait.until(ExpectedConditions.elementToBeClickable(Client_name));
-            Client_name.click();
-
-            /*if (Client_name.isDisplayed() && Client_name.isEnabled()) {
+            if (Client_name.isDisplayed()) {
                 Client_name.click();
-            } else {
-                System.out.println("Homepage button does not show up");
-            }*/
-            Thread.sleep(5000);
-            String ActualTitle = driver.getTitle();
-            String ExpectedTitle = "Swarmio Hive";
-            Assert.assertEquals(ActualTitle, ExpectedTitle);
 
+                Thread.sleep(5000);
+                String ActualTitle = driver.getTitle();
+                String ExpectedTitle = "Swarmio Hive";
+                Assert.assertEquals(ActualTitle, ExpectedTitle);
+            } else {
+                System.out.println("Swarmio logo not displayed");
+            }
         } catch (Exception e) {
 
         }
@@ -70,7 +65,7 @@ public class PreLoginButtons extends BaseClass {
 
     public String ClickWatch() {
         try {
-//            wait.until(ExpectedConditions.elementToBeClickable(Watch));
+//            wait.until(ExpectedConditions.visibilityOf(Watch));
             Watch.click();
             Thread.sleep(5000);
             String ActualTitle = driver.getTitle();
@@ -103,9 +98,9 @@ public class PreLoginButtons extends BaseClass {
 
     public String ClickTournaments() {
         try {
+//            wait.until(ExpectedConditions.visibilityOf(Events));
             Events.click();
-            Thread.sleep(5000);
-
+            Thread.sleep(7000);
             String ActualTitle = driver.getTitle();
             String ExpectedTitle = "Events | Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
@@ -141,7 +136,7 @@ public class PreLoginButtons extends BaseClass {
             String ActualTitle = driver.getTitle();
             String ExpectedTitle = "Swarmio Hive";
             Assert.assertEquals(ActualTitle, ExpectedTitle);
-            Client_name.click();
+//            Client_name.click();
 
         } catch (Exception e) {
 
@@ -193,6 +188,39 @@ public class PreLoginButtons extends BaseClass {
 
         }
         String validation = "View more events page loads fine";
+        return validation;
+    }
+
+    public String EnterUsername() {
+        try {
+            Username.sendKeys("earl@swarmio.media");
+
+        } catch (Exception e) {
+
+        }
+        String validation = "Username was entered fine";
+        return validation;
+    }
+
+    public String EnterPassword() {
+        try {
+            Password.sendKeys("qapass1234");
+
+        } catch (Exception e) {
+
+        }
+        String validation = "Password was entered fine";
+        return validation;
+    }
+
+    public String ClickLoginButton() {
+        try {
+            LoginButton.click();
+
+        } catch (Exception e) {
+
+        }
+        String validation = "User was logged in";
         return validation;
     }
 

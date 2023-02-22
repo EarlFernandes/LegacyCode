@@ -17,7 +17,7 @@
 //            String ExpectedTitle = "Swarmio Hive";
 //            Thread.sleep(4000);
 //            Assert.assertEquals(ActualTitle, ExpectedTitle);
-//            System.out.println(ActualTitle);
+//            System.out.println(ActualTi           tle);
             pgeobj.ClickWatch();
             System.out.println(pgeobj.ClickWatch());
             pgeobj.ClientName();

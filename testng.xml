@@ -2,6 +2,7 @@
     <test name="Check Title of page">
         <classes>
             <class name="HomePageSmokeTest"/>
+            <class name="LoginTest"/>
         </classes>
     </test>
 </suite>
