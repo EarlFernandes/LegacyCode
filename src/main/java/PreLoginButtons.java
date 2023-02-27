@@ -44,7 +44,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickWatch() {
         try {
             if (Watch.isDisplayed()) {
-                Watch.sendKeys(Keys.ENTER);
+                Watch.click();
 
                 Thread.sleep(5000);
             } else {
@@ -61,7 +61,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClientName() {
         try {
             if (Client_name.isDisplayed()) {
-                Client_name.sendKeys(Keys.ENTER);
+                Client_name.click();
 
                 Thread.sleep(5000);
             } else {
@@ -78,7 +78,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickTournaments() {
         try {
             if (Events.isDisplayed()) {
-                Events.sendKeys(Keys.ENTER);
+                Events.click();
 
                 Thread.sleep(5000);
             } else {
@@ -95,7 +95,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickStore() {
         try {
             if (Store.isDisplayed()) {
-                Store.sendKeys(Keys.ENTER);
+                Store.click();
 
                 Thread.sleep(5000);
             } else {
@@ -112,7 +112,7 @@ public class PreLoginButtons extends BaseClass {
     public String Clicklogin() {
         try {
             if (Login.isDisplayed()) {
-                Login.sendKeys(Keys.ENTER);
+                Login.click();
 
                 Thread.sleep(5000);
             } else {
@@ -129,7 +129,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickRegister() {
         try {
             if (Register.isDisplayed()) {
-                Register.sendKeys(Keys.ENTER);
+                Register.click();
 
                 Thread.sleep(5000);
             } else {
@@ -146,7 +146,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickTournamentsViewMore() {
         try {
             if (Tournaments_ViewMore.isDisplayed()) {
-                Tournaments_ViewMore.sendKeys(Keys.ENTER);
+                Tournaments_ViewMore.click();
 
                 Thread.sleep(5000);
             } else {
