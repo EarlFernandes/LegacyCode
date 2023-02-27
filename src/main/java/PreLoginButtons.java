@@ -44,7 +44,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickWatch() {
         try {
             if (Watch.isDisplayed()) {
-                Watch.click();
+                Watch.sendKeys(Keys.ENTER);
 
                 Thread.sleep(5000);
             } else {
@@ -61,7 +61,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClientName() {
         try {
             if (Client_name.isDisplayed()) {
-                Client_name.click();
+                Client_name.sendKeys(Keys.ENTER);
 
                 Thread.sleep(5000);
             } else {
@@ -78,7 +78,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickTournaments() {
         try {
             if (Events.isDisplayed()) {
-                Events.click();
+                Events.sendKeys(Keys.ENTER);
 
                 Thread.sleep(5000);
             } else {
@@ -95,7 +95,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickStore() {
         try {
             if (Store.isDisplayed()) {
-                Store.click();
+                Store.sendKeys(Keys.ENTER);
 
                 Thread.sleep(5000);
             } else {
@@ -112,7 +112,7 @@ public class PreLoginButtons extends BaseClass {
     public String Clicklogin() {
         try {
             if (Login.isDisplayed()) {
-                Login.click();
+                Login.sendKeys(Keys.ENTER);
 
                 Thread.sleep(5000);
             } else {
@@ -129,7 +129,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickRegister() {
         try {
             if (Register.isDisplayed()) {
-                Register.click();
+                Register.sendKeys(Keys.ENTER);
 
                 Thread.sleep(5000);
             } else {
@@ -146,7 +146,7 @@ public class PreLoginButtons extends BaseClass {
     public String ClickTournamentsViewMore() {
         try {
             if (Tournaments_ViewMore.isDisplayed()) {
-                Tournaments_ViewMore.click();
+                Tournaments_ViewMore.sendKeys(Keys.ENTER);
 
                 Thread.sleep(5000);
             } else {
