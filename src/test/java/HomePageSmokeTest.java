@@ -13,19 +13,19 @@
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
             driver.get("https://qa-hive-swarmio-cicd.swarmio.gg/");
             driver.manage().window().maximize();
-            pgeobj.ClickWatch();
+//            pgeobj.ClickWatch();
             System.out.println(pgeobj.ClickWatch());
-            pgeobj.ClientName();
+//            pgeobj.ClientName();
             System.out.println(pgeobj.ClientName());
-            pgeobj.ClickTournaments();
+//            pgeobj.ClickTournaments();
             System.out.println(pgeobj.ClickTournaments());
-            pgeobj.ClickRewards();
+//            pgeobj.ClickRewards();
             System.out.println(pgeobj.ClickRewards());
-            pgeobj.Clicklogin();
+//            pgeobj.Clicklogin();
             System.out.println(pgeobj.Clicklogin());
-            pgeobj.ClickRegister();
+//            pgeobj.ClickRegister();
             System.out.println(pgeobj.ClickRegister());
-            pgeobj.ClickTournamentsViewMore();
+//            pgeobj.ClickTournamentsViewMore();
             System.out.println(pgeobj.ClickTournamentsViewMore());
             driver.close();
         }

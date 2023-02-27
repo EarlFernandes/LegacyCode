@@ -1,5 +1,5 @@
 <suite name="Swarmio Hive">
-    <test name="Check Title of page">
+    <test name="Default QA Swarmio Hive test">
         <classes>
             <class name="HomePageSmokeTest"/>
             <class name="LoginTest"/>

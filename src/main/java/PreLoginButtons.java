@@ -7,25 +7,25 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class PreLoginButtons extends BaseClass {
-    @FindBy(xpath = "//*[contains(@class, 'd-block me-3')]")
+    @FindBy(xpath = "//*[@data-semantic='navbar-home-link']")
     WebElement Client_name;
 
-    @FindBy(xpath = "//*[text()='Watch']")
+    @FindBy(xpath = "//*[@data-semantic='navbar-watch-link']")
     WebElement Watch;
 
-    @FindBy(xpath = "//*[text()='Events']")
+    @FindBy(xpath = "//*[@data-semantic='navbar-events-link']")
     WebElement Events;
 
-    @FindBy(xpath = "//*[text()='Store']")
+    @FindBy(xpath = "//*[@data-semantic='navbar-store-link']")
     WebElement Store;
 
-    @FindBy(xpath = "//*[text()='Login']")
+    @FindBy(xpath = "//*[@data-semantic='navbar-sign-in-link']")
     WebElement Login;
 
-    @FindBy(xpath = "//*[text()='Register']")
+    @FindBy(xpath = "//*[@data-semantic='navbar-create-account-link']")
     WebElement Register;
 
-    @FindBy(xpath = "//*[contains(@data-semantic, 'cards-container-events-view-all')]")
+    @FindBy(xpath = "//*[@data-semantic='cards-container-events-view-all']")
     WebElement Tournaments_ViewMore;
 
     @FindBy(xpath = "//*[contains(@data-cy, 'email')]")

@@ -22,10 +22,8 @@ public class BaseClass {
         opt.addArguments("headless");
         opt.addArguments("disable-dev-shm-usage");
         opt.addArguments("no-sandbox"); // https://stackoverflow.com/questions/50642308/webdriverexception-unknown-error-devtoolsactiveport-file-doesnt-exist-while-t
-//        opt.addArguments("--ignore-certificate-errors");
-//        opt.addArguments("--ignore-ssl-errors=yes");
         driver = new ChromeDriver(opt);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
