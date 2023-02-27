@@ -6,4 +6,9 @@
             <class name="CreateTeam"/>
         </classes>
     </test>
+    <test name="Globe QA Swarmio Hive test">
+        <classes>
+            <class name="HomePageSmokeTestGlobe"/>
+        </classes>
+    </test>
 </suite>

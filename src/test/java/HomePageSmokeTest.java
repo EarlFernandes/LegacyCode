@@ -2,6 +2,8 @@
         import org.testng.Assert;
         import org.testng.annotations.Test;
 
+        import static org.testng.AssertJUnit.assertEquals;
+
 
         public class HomePageSmokeTest extends BaseClass{
         public PreLoginButtons pgeobj;
@@ -13,19 +15,18 @@
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
             driver.get("https://qa-hive-swarmio-cicd.swarmio.gg/");
             driver.manage().window().maximize();
-//            pgeobj.ClickWatch();
             System.out.println(pgeobj.ClickWatch());
-//            pgeobj.ClientName();
+            Assert.assertEquals(pgeobj.ClickWatch(), "Watch | Swarmio Hive", "Watch page didn't load correctly or in time");
             System.out.println(pgeobj.ClientName());
-//            pgeobj.ClickTournaments();
+            Assert.assertEquals(pgeobj.ClientName(), "Swarmio Hive", "Home page didn't load correctly or in time");
             System.out.println(pgeobj.ClickTournaments());
-//            pgeobj.ClickRewards();
-            System.out.println(pgeobj.ClickRewards());
-//            pgeobj.Clicklogin();
+            Assert.assertEquals(pgeobj.ClickTournaments(), "Events | Swarmio Hive", "Events page didn't load correctly or in time");
+            System.out.println(pgeobj.ClickStore());
+            Assert.assertEquals(pgeobj.ClickStore(), "Store | Swarmio Hive", "Store page didn't load correctly or in time");
             System.out.println(pgeobj.Clicklogin());
-//            pgeobj.ClickRegister();
+            Assert.assertEquals(pgeobj.Clicklogin(), "Swarmio Hive", "Login page didn't load correctly or in time");
             System.out.println(pgeobj.ClickRegister());
-//            pgeobj.ClickTournamentsViewMore();
+            Assert.assertEquals(pgeobj.ClickRegister(), "Swarmio Hive", "Register page didn't load correctly or in time");
             System.out.println(pgeobj.ClickTournamentsViewMore());
             driver.close();
         }
