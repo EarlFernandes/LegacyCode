@@ -19,7 +19,12 @@ public class BaseClass {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
-//        opt.addArguments("headless");
+        opt.addArguments("--window-size=1920,1080");
+        opt.addArguments("--disable-extensions");
+        opt.addArguments("--proxy-server='direct://'");
+        opt.addArguments("--proxy-bypass-list=*");
+        opt.addArguments("--start-maximized");
+        opt.addArguments("headless");
         opt.addArguments("disable-dev-shm-usage");
         opt.addArguments("no-sandbox"); // https://stackoverflow.com/questions/50642308/webdriverexception-unknown-error-devtoolsactiveport-file-doesnt-exist-while-t
         driver = new ChromeDriver(opt);
