@@ -4,8 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
-import java.text.SimpleDateFormat;
 import java.util.Random;
 
 public class PostLoginButtons extends BaseClass {
@@ -22,7 +20,7 @@ public class PostLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[contains(@data-testid, 'dropdown-display-name')]")
     WebElement Dropdown;
 
-    @FindBy(css = "#app > section > div:nth-child(2) > div > div.HorizontalNav_navContainer__1wPhM.Dashboard_mainNavigation__3pb4k > div > div > div > div > div.UserNavigation_userMenuContainer__K1HfP.UserNavigation_show__3twgc > a:nth-child(2)")
+    @FindBy(xpath = "//*[contains(@class, 'UserNavigation_userMenuItem__7YSv6 btn btn-secondary p-2 fw-bold dropdown-item')]//*[contains(@data-icon, 'users')]")
     WebElement Teams;
 
     @FindBy(xpath = "//*[contains(@data-icon, 'circle-plus')]")
@@ -33,7 +31,6 @@ public class PostLoginButtons extends BaseClass {
 
     @FindBy(xpath = "//*[contains(@class, 'w-100 mt-auto btn btn-primary')]")
     WebElement CreateTeamButton;
-
 
     public PostLoginButtons(WebDriver driver) {
         this.driver = driver;
