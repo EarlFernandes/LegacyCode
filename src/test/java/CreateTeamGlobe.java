@@ -3,7 +3,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class CreateTeam extends BaseClass {
+public class CreateTeamGlobe extends BaseClass {
     public PreLoginButtons pgeobj;
     public PostLoginButtons Logbtns;
 
@@ -13,7 +13,7 @@ public class CreateTeam extends BaseClass {
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
             Logbtns = PageFactory.initElements(driver, PostLoginButtons.class);
-            driver.get("https://qa-hive-swarmio-cicd.swarmio.gg/");
+            driver.get("https://qa-hive-globe-cicd.swarmio.gg/");
             driver.manage().window().maximize();
             pgeobj.Clicklogin();
             System.out.println(pgeobj.EnterUsername());
@@ -23,7 +23,7 @@ public class CreateTeam extends BaseClass {
             System.out.println(Logbtns.LoginCheck());
             System.out.println(Logbtns.CreateTeam());
             String title = Logbtns.CreateTeam();
-            Assert.assertEquals(title, "Manage Teams | Swarmio Hive", "Manage team's page did not load correctly, check if team can be created successfully");
+            Assert.assertEquals(title, "Manage Teams | Globe Gamer Grounds", "Globe's Manage team's page did not load correctly, check if team can be created successfully");
 
             driver.close();
         } catch (Exception e) {

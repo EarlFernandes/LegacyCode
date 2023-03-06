@@ -63,17 +63,13 @@ public class PostLoginButtons extends BaseClass {
             Thread.sleep(5000);
             CreateTeamButton.sendKeys(Keys.ENTER);
             Thread.sleep(5000);
-            String ActualTitle = driver.getTitle();
-            String ExpectedTitle = "Manage Teams | Swarmio Hive";
-            Assert.assertEquals(ActualTitle, ExpectedTitle);
-            System.out.println("Actual title is: "+ ActualTitle);
 
 
         } catch (Exception e) {
 
         }
-        String validation = "Create team succeeded";
-        return validation;
+        String title = driver.getTitle();
+        return title;
     }
 
 
