@@ -2,6 +2,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
+
 
 public class CreateTeam extends BaseClass {
     public PreLoginButtons pgeobj;
@@ -22,9 +25,6 @@ public class CreateTeam extends BaseClass {
             Thread.sleep(5000);
             System.out.println(Logbtns.LoginCheck());
             System.out.println(Logbtns.CreateTeam());
-            String title = Logbtns.CreateTeam();
-            Assert.assertEquals(title, "Manage Teams | Swarmio Hive", "Manage team's page did not load correctly, check if team can be created successfully");
-
             driver.close();
         } catch (Exception e) {
             System.out.println(e);

@@ -32,6 +32,9 @@ public class PostLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[contains(@class, 'w-100 mt-auto btn btn-primary')]")
     WebElement CreateTeamButton;
 
+    @FindBy(xpath = "//*[contains(@class, 'toast-body')]")
+    WebElement TeamCreationMsg;
+
     public PostLoginButtons(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -62,6 +65,10 @@ public class PostLoginButtons extends BaseClass {
             TeamName.sendKeys("Earl's team" +getRandomNumber());
             Thread.sleep(5000);
             CreateTeamButton.sendKeys(Keys.ENTER);
+            String TeamcreationMessage = TeamCreationMsg.getText();
+            Assert.assertEquals(TeamcreationMessage, "Your team has been successfully created.", "Team creation message is not displayed correctly");
+            System.out.println("Team creation message displayed in popup is: " + TeamcreationMessage);
+
             Thread.sleep(5000);
 
 

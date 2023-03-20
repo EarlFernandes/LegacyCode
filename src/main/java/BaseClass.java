@@ -23,6 +23,7 @@ public class BaseClass {
         opt.addArguments("--disable-extensions");
         opt.addArguments("--proxy-server='direct://'");
         opt.addArguments("--proxy-bypass-list=*");
+        opt.addArguments("--remote-allow-origins=*");
         opt.addArguments("--start-maximized");
         opt.addArguments("headless");
         opt.addArguments("disable-dev-shm-usage");

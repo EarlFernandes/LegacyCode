@@ -22,10 +22,6 @@ public class CreateTeamGlobe extends BaseClass {
             Thread.sleep(5000);
             System.out.println(Logbtns.LoginCheck());
             System.out.println(Logbtns.CreateTeam());
-            String title = Logbtns.CreateTeam();
-            Assert.assertEquals(title, "Manage Teams | Globe Gamer Grounds", "Globe's Manage team's page did not load correctly, check if team can be created successfully");
-
-            driver.close();
         } catch (Exception e) {
             System.out.println(e);
         }
