@@ -2,7 +2,6 @@
     <test name="Default QA Swarmio Hive test">
         <classes>
             <class name="HomePageSmokeTest"/>
-            <class name="LoginTest"/>
             <class name="CreateTeam"/>
         </classes>
     </test>
@@ -10,7 +9,18 @@
         <classes>
             <class name="HomePageSmokeTestGlobe"/>
             <class name="CreateTeamGlobe"/>
-            <class name="LoginTestGlobe"/>
+        </classes>
+    </test>
+    <test name="Etisalat QA Swarmio Hive test">
+        <classes>
+            <class name="HomePageSmokeTestEtisalat"/>
+            <class name="CreateTeamEtisalat"/>
+        </classes>
+    </test>
+    <test name="Ooredoo QA Swarmio Hive test">
+        <classes>
+            <class name="HomePageSmokeTestOoredoo"/>
+            <class name="CreateTeamOoredoo"/>
         </classes>
     </test>
 </suite>
