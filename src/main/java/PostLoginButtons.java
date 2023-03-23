@@ -8,6 +8,8 @@ import java.util.Random;
 
 public class PostLoginButtons extends BaseClass {
 
+
+    //Login Webelements
     public float getRandomNumber(){
         // create instance of Random class
         Random rand = new Random();
@@ -17,6 +19,7 @@ public class PostLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[contains(@data-icon, 'coins')]")
     WebElement Coins;
 
+    //TeamCreation Webelements
     @FindBy(xpath = "//*[contains(@data-testid, 'dropdown-display-name')]")
     WebElement Dropdown;
 

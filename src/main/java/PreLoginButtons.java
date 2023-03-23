@@ -1,9 +1,21 @@
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import java.util.Random;
 
 public class PreLoginButtons extends BaseClass {
+
+    public int getRandomNumber(){
+        // create instance of Random class
+        Random rand = new Random();
+        // Generate and return Random number with decimal
+        return rand.nextInt(1000000);
+    }
+
     @FindBy(xpath = "//*[@data-semantic='navbar-home-link']")
     WebElement Client_name;
 
@@ -34,6 +46,21 @@ public class PreLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[contains(@data-semantic, 'sign-in-form-submit')]")
     WebElement LoginButton;
 
+    //RegisterUser Webelements
+    @FindBy(xpath = "//*[contains(@data-cy, 'displayName')]")
+    WebElement DisplayName;
+
+    @FindBy(xpath = "//*[contains(@data-cy, 'confirmPassword')]")
+    WebElement ConfirmPassword;
+
+    @FindBy(xpath = "//*[contains(@data-cy, 'acceptTerms')]")
+    WebElement AcceptTerms;
+
+    @FindBy(xpath = "//*[contains(@data-semantic, 'registration-form-submit')]")
+    WebElement Continuebtn;
+
+    @FindBy(xpath = "//*[contains(@data-cy, 'verifyEmailTitle')]")
+    WebElement VerifyAccMsg;
 
     public PreLoginButtons(WebDriver driver) {
         this.driver = driver;
@@ -193,6 +220,36 @@ public class PreLoginButtons extends BaseClass {
         }
         String validation = "User was logged in";
         return validation;
+
+
     }
 
+    public String RegisterUser() {
+        try {
+            Thread.sleep(5000);
+            {
+                int number = getRandomNumber();
+                DisplayName.sendKeys("Earl " + number);
+                Username.sendKeys("Tester+"+number+"@swarmio.media");
+                Password.sendKeys("qapass1234");
+                ConfirmPassword.sendKeys("qapass1234");
+                AcceptTerms.click();
+                Thread.sleep(5000);
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("window.scrollBy(0,250)", "");
+                Continuebtn.click();
+                Thread.sleep(5000);
+                String VerifyEmailMessage = VerifyAccMsg.getText();
+                Assert.assertEquals(VerifyEmailMessage, "Verify Your Account", "Verify Your Account message is not displayed correctly");
+                System.out.println("Verify your account message has been displayed correctly, pending account verification graphql call");
+            }
+
+        } catch (Exception e) {
+
+        }
+        String validation = "User was logged in";
+        return validation;
+
+
+    }
 }
