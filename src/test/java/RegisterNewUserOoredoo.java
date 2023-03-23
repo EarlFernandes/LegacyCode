@@ -7,7 +7,7 @@ public class RegisterNewUserOoredoo extends BaseClass {
     public PostLoginButtons Logbtns;
 
     @Test
-    public void TeamCreate() {
+    public void UserCreate() {
 
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
