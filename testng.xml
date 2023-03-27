@@ -4,6 +4,7 @@
             <class name="HomePageSmokeTest"/>
             <class name="CreateTeam"/>
             <class name="RegisterNewUser"/>
+            <class name="CreateTournament"/>
         </classes>
     </test>
     <test name="Globe QA Swarmio Hive test">
