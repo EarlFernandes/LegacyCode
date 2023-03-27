@@ -12,6 +12,7 @@
             <class name="HomePageSmokeTestGlobe"/>
             <class name="CreateTeamGlobe"/>
             <class name="RegisterNewUserGlobe"/>
+            <class name="CreateTournamentGlobe"/>
         </classes>
     </test>
     <test name="Etisalat QA Swarmio Hive test">
@@ -19,6 +20,7 @@
             <class name="HomePageSmokeTestEtisalat"/>
             <class name="CreateTeamEtisalat"/>
             <class name="RegisterNewUserEtisalat"/>
+            <class name="CreateTournamentEtisalat"/>
         </classes>
     </test>
     <test name="Ooredoo QA Swarmio Hive test">
@@ -26,6 +28,7 @@
             <class name="HomePageSmokeTestOoredoo"/>
             <class name="CreateTeamOoredoo"/>
             <class name="RegisterNewUserOoredoo"/>
+            <class name="CreateTournamentOoredoo"/>
         </classes>
     </test>
 </suite>
