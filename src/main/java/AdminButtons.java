@@ -98,6 +98,9 @@ public class AdminButtons extends BaseClass {
     @FindBy(xpath = "//*[contains(@type, 'submit')]")
     WebElement Save;
 
+    @FindBy(xpath = "//*[text() = 'Id']/parent::*/following-sibling::*/span")
+    WebElement EventID;
+
     public AdminButtons(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -145,12 +148,12 @@ public class AdminButtons extends BaseClass {
             Save.click();
             Thread.sleep(5000);
 
-
         } catch (Exception e) {
 
         }
-        String validation = "Login succeeded, user coins displayed";
-        return validation;
+
+        String Eventid = EventID.getText();
+        return Eventid;
     }
 
 

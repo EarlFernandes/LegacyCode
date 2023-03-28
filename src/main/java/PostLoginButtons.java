@@ -10,12 +10,13 @@ public class PostLoginButtons extends BaseClass {
 
 
     //Login Webelements
-    public float getRandomNumber(){
+    public float getRandomNumber() {
         // create instance of Random class
         Random rand = new Random();
         // Generate and return Random number with decimal
         return rand.nextInt();
     }
+
     @FindBy(xpath = "//*[contains(@data-icon, 'coins')]")
     WebElement Coins;
 
@@ -37,6 +38,15 @@ public class PostLoginButtons extends BaseClass {
 
     @FindBy(xpath = "//*[contains(@class, 'toast-body')]")
     WebElement TeamCreationMsg;
+
+    @FindBy(xpath = "//*[contains(@data-semantic, 'event-header-join')]")
+    WebElement JoinNowbtn;
+
+    @FindBy(xpath = "//*[contains(@data-semantic, 'join-event-modal-next')]")
+    WebElement Confirmbtn;
+
+    @FindBy(xpath = "//*[contains(@data-cy, 'successfulJoin')]")
+    WebElement Joinevntsuccessmsg;
 
     public PostLoginButtons(WebDriver driver) {
         this.driver = driver;
@@ -65,7 +75,7 @@ public class PostLoginButtons extends BaseClass {
             Dropdown.click();
             Teams.click();
             AddTeam.click();
-            TeamName.sendKeys("Earl's team" +getRandomNumber());
+            TeamName.sendKeys("Earl's team" + getRandomNumber());
             Thread.sleep(5000);
             CreateTeamButton.sendKeys(Keys.ENTER);
             String TeamcreationMessage = TeamCreationMsg.getText();
@@ -80,6 +90,20 @@ public class PostLoginButtons extends BaseClass {
         }
         String title = driver.getTitle();
         return title;
+    }
+
+    public String JoinEvent() {
+        try {
+            Thread.sleep(5000);
+            JoinNowbtn.click();
+            Thread.sleep(2000);
+            Confirmbtn.click();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+
+        }
+        String ConfirmJoinMsg = Joinevntsuccessmsg.getText();
+        return ConfirmJoinMsg;
     }
 
 

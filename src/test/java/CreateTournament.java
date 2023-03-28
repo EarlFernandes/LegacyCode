@@ -17,7 +17,7 @@ public class CreateTournament extends BaseClass {
             String password = "FvtJ3ypjAsJ07bP";
             driver.get("https://" +username +":" +password +"@"+ "qa-hive-swarmio-admin-cicd.swarmio.gg");
             driver.manage().window().maximize();
-            admbtns.EventCreate();
+            System.out.println("Event created with ID " +admbtns.EventCreate());
             driver.close();
         } catch (Exception e) {
             System.out.println(e);
