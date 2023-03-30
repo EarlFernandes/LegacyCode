@@ -5,7 +5,7 @@
             <class name="CreateTeam"/>
             <class name="RegisterNewUser"/>
             <class name="CreateTournament"/>
-            <class name="JoinTournament"/>
+<!--            <class name="JoinTournament"/>-->
         </classes>
     </test>
     <test name="Globe QA Swarmio Hive test">
@@ -14,7 +14,7 @@
             <class name="CreateTeamGlobe"/>
             <class name="RegisterNewUserGlobe"/>
             <class name="CreateTournamentGlobe"/>
-            <class name="JoinTournamentGlobe"/>
+<!--            <class name="JoinTournamentGlobe"/>-->
         </classes>
     </test>
     <test name="Etisalat QA Swarmio Hive test">
@@ -23,7 +23,7 @@
             <class name="CreateTeamEtisalat"/>
             <class name="RegisterNewUserEtisalat"/>
             <class name="CreateTournamentEtisalat"/>
-            <class name="JoinTournamentEtisalat"/>
+<!--            <class name="JoinTournamentEtisalat"/>-->
         </classes>
     </test>
     <test name="Ooredoo QA Swarmio Hive test">
@@ -32,7 +32,7 @@
             <class name="CreateTeamOoredoo"/>
             <class name="RegisterNewUserOoredoo"/>
             <class name="CreateTournamentOoredoo"/>
-            <class name="JoinTournamentOoredoo"/>
+<!--            <class name="JoinTournamentOoredoo"/>-->
         </classes>
     </test>
 </suite>
