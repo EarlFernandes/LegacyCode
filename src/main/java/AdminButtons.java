@@ -155,6 +155,7 @@ public class AdminButtons extends BaseClass {
 
         String Eventid = EventID.getText();
         String Eventid2 = Eventid.substring(8,44);
+        System.out.println(Eventid2);
         return Eventid2;
     }
 
