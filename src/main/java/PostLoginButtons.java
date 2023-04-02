@@ -100,12 +100,8 @@ public class PostLoginButtons extends BaseClass {
             Confirmbtn.click();
             Thread.sleep(2000);
         } catch (Exception e) {
-
         }
         String ConfirmJoinMsg = Joinevntsuccessmsg.getText();
         return ConfirmJoinMsg;
     }
-
-
-
 }

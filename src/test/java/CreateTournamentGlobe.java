@@ -17,7 +17,7 @@ public class CreateTournamentGlobe extends BaseClass {
             String password = "FvtJ3ypjAsJ07bP";
             driver.get("https://" +username +":" +password +"@"+ "qa-hive-globe-admin-cicd.swarmio.gg");
             driver.manage().window().maximize();
-            admbtns.EventCreate();
+            System.out.println(admbtns.EventCreate());
             driver.close();
         } catch (Exception e) {
             System.out.println(e);

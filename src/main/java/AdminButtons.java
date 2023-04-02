@@ -99,8 +99,8 @@ public class AdminButtons extends BaseClass {
     WebElement Save;
 
 //    @FindBy(xpath = "//*[text() = 'Id']/parent::*/following-sibling::*/span")
-    /*@FindBy(xpath = "//*[@id='react-admin-title']/span")
-    WebElement EventID;*/
+    @FindBy(xpath = "//*[@id='react-admin-title']/span")
+    WebElement EventID;
 
     public AdminButtons(WebDriver driver) {
         this.driver = driver;
@@ -153,10 +153,10 @@ public class AdminButtons extends BaseClass {
 
         }
 
-        /*String Eventid = EventID.getText();
+        String Eventid = EventID.getText();
         String Eventid2 = Eventid.substring(8,44);
-        System.out.println(Eventid2);*/
-        String Eventid2 = "Event has been created";
+        System.out.println(Eventid2);
+//        String Eventid2 = "Event has been created";
         return Eventid2;
     }
 
