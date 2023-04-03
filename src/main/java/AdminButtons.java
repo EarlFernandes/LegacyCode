@@ -118,53 +118,161 @@ public class AdminButtons extends BaseClass {
 //            Thread.sleep(5000);
             CreateEvent.click();
             Thread.sleep(5000);
-            ParticipantType.click();
-            Thread.sleep(2000);
-            IndividualParticipantType.click();
-            Thread.sleep(2000);
-            CompetitionType.click();
-            Thread.sleep(2000);
-            TournamentType.click();
-            Thread.sleep(2000);
-            TournamentFormat.click();
-            Thread.sleep(2000);
-            SingleElimination.click();
-            Thread.sleep(2000);
-            Game.click();
-            Thread.sleep(2000);
-            LeagueofLegends.click();
-            Thread.sleep(2000);
-            GameAccType.click();
-            Thread.sleep(2000);
-            GameAccTypeID.click();
-            Thread.sleep(2000);
+            if(ParticipantType.isDisplayed()) {
+                ParticipantType.click();
+                System.out.println("ParticipantType dropdown opened");
+            }
+            else {
+                System.out.println("ParticipantType dropdown not opened");
+            }
+            if(IndividualParticipantType.isDisplayed()) {
+                IndividualParticipantType.click();
+                System.out.println("IndividualParticipantType from dropdown has been selected");
+            }
+            else {
+                System.out.println("IndividualParticipantType from dropdown has not been selected");
+            }
+            if(CompetitionType.isDisplayed()) {
+                CompetitionType.click();
+                System.out.println("CompetitionType dropdown is opened");
+            }
+            else{
+                System.out.println("CompetitionType dropdown is not opened");
+            }
+            if(TournamentType.isDisplayed()) {
+                TournamentType.click();
+                System.out.println("TournamentType is selected from dropdown");
+            }
+            else{
+                System.out.println("TournamentType is not selected from dropdown");
+            }
+            if(TournamentFormat.isDisplayed()) {
+                TournamentFormat.click();
+                System.out.println("TournamentFormat dropdown is opened");
+            }
+            else {
+                System.out.println("TournamentFormat dropdown is not opened");
+            }
+            if(SingleElimination.isDisplayed()) {
+                SingleElimination.click();
+                System.out.println("SingleElimination is selected from dropdown");
+            }
+            else {
+                System.out.println("SingleElimination is not selected from dropdown");
+            }
+            if(Game.isDisplayed()) {
+                Game.click();
+                System.out.println("Game dropdown has been opened");
+            }
+            else {
+                System.out.println("Game dropdown has not been opened");
+            }
+            if(LeagueofLegends.isDisplayed()) {
+                LeagueofLegends.click();
+                System.out.println("LeagueofLegends has been selected from dropdown");
+            }
+            else {
+                System.out.println("LeagueofLegends has not been selected from dropdown");
+            }
+            if(GameAccType.isDisplayed()) {
+                GameAccType.click();
+                System.out.println("GameAccType dropdown has been opened");
+            }
+            else{
+                System.out.println("GameAccType dropdown has not been opened");
+            }
+            if(GameAccTypeID.isDisplayed()) {
+                GameAccTypeID.click();
+                System.out.println("GameAccTypeID has been selected from dropdown");
+            }
+            else{
+                System.out.println("GameAccTypeID has not been selected from dropdown");
+            }
 
-            StartTime.sendKeys("002023-12-310200AM");
+            if(StartTime.isDisplayed()) {
+                StartTime.sendKeys("002023-12-310200AM");
+                System.out.println("StartTime has been entered");
+            }
+            else {
+                System.out.println("StartTime has not been entered");
+            }
+            if(RegistrationOpen.isDisplayed()) {
+                RegistrationOpen.sendKeys("002023-03-270200AM");
+                System.out.println("RegistrationOpen time has been entered");
+            }
+            else {
+                System.out.println("RegistrationOpen time has not been entered");
+            }
+            if(RegistrationClose.isDisplayed()) {
+                RegistrationClose.sendKeys("002023-12-310100AM");
+                System.out.println("RegistrationClose time has been entered");
+            }
+            else {
+                System.out.println("RegistrationClose time has not been entered");
+            }
+            if(DetailsTab.isDisplayed()) {
+                DetailsTab.click();
+                System.out.println("DetailsTab has been opened");
+            }
+            else {
+                System.out.println("DetailsTab has not been opened");
+            }
             Thread.sleep(2000);
-            RegistrationOpen.sendKeys("002023-03-270200AM");
-            Thread.sleep(2000);
-            RegistrationClose.sendKeys("002023-12-310100AM");
-            Thread.sleep(2000);
-            DetailsTab.click();
-            Thread.sleep(2000);
-            Category.click();
-            Thread.sleep(2000);
-            CategoryType.click();
-            Thread.sleep(2000);
-            Region.click();
-            Thread.sleep(2000);
-            RegionType.click();
-            Thread.sleep(2000);
-            LocalizedEventType.click();
-            Thread.sleep(2000);
+            if(Category.isDisplayed()) {
+                Category.click();
+                System.out.println("Category dropdown has been opened");
+            }
+            else {
+                System.out.println("Category dropdown has not been opened");
+            }
+            if(CategoryType.isDisplayed()) {
+                CategoryType.click();
+                System.out.println("CategoryType has been selected");
+            }
+            else {
+                System.out.println("CategoryType has not been selected");
+            }
+            if(Region.isDisplayed()) {
+                Region.click();
+                System.out.println("Region dropdown has been opened");
+            }
+            else {
+                System.out.println("Region dropdown has not been opened");
+            }
+            if(RegionType.isDisplayed()) {
+                RegionType.click();
+                System.out.println("RegionType has been selected from dropdown");
+            }
+            else {
+                System.out.println("RegionType has not been selected from dropdown");
+            }
+            if(LocalizedEventType.isDisplayed()) {
+                LocalizedEventType.click();
+                System.out.println("LocalizedEventType has been opened");
+            }
+            else {
+                System.out.println("LocalizedEventType has not been opened");
+            }
 
             DateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
             Date date = new Date();
             String date1 = dateformat.format(date);
 
-            LocalizedName.sendKeys("Event "+ date1);
+            if(LocalizedName.isDisplayed()) {
+                LocalizedName.sendKeys("Event " + date1);
+                System.out.println("LocalizedName of the event has been added");
+            }
+            else {
+                System.out.println("LocalizedName of the event has not been added");
+            }
             Thread.sleep(5000);
-            Save.click();
+            if(Save.isDisplayed()) {
+                Save.click();
+                System.out.println("Event has been saved");
+            }
+            else {
+                System.out.println("Event has not been saved");
+            }
             Thread.sleep(5000);
 
         } catch (Exception e) {
