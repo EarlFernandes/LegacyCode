@@ -154,8 +154,8 @@ public class AdminButtons extends BaseClass {
         }
 
         String Eventid = EventID.getText();
+        System.out.println(Eventid);
         String Eventid2 = Eventid.substring(8,44);
-        System.out.println(Eventid2);
 //        String Eventid2 = "Event has been created";
         return Eventid2;
     }
