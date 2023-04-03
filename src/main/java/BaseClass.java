@@ -19,7 +19,7 @@ public class BaseClass {
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("no-sandbox");
         opt.addArguments("--disable-dev-shm-usage");
-//        opt.addArguments("headless");
+        opt.addArguments("headless");
         opt.addArguments("--disable-extensions");
         opt.addArguments("--proxy-server='direct://'");
         opt.addArguments("--proxy-bypass-list=*");
