@@ -119,27 +119,44 @@ public class AdminButtons extends BaseClass {
             CreateEvent.click();
             Thread.sleep(5000);
             ParticipantType.click();
+            Thread.sleep(2000);
             IndividualParticipantType.click();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             CompetitionType.click();
+            Thread.sleep(2000);
             TournamentType.click();
+            Thread.sleep(2000);
             TournamentFormat.click();
+            Thread.sleep(2000);
             SingleElimination.click();
+            Thread.sleep(2000);
             Game.click();
+            Thread.sleep(2000);
             LeagueofLegends.click();
+            Thread.sleep(2000);
             GameAccType.click();
+            Thread.sleep(2000);
             GameAccTypeID.click();
-
+            Thread.sleep(2000);
 
             StartTime.sendKeys("002023-12-310200AM");
+            Thread.sleep(2000);
             RegistrationOpen.sendKeys("002023-03-270200AM");
+            Thread.sleep(2000);
             RegistrationClose.sendKeys("002023-12-310100AM");
+            Thread.sleep(2000);
             DetailsTab.click();
+            Thread.sleep(2000);
             Category.click();
+            Thread.sleep(2000);
             CategoryType.click();
+            Thread.sleep(2000);
             Region.click();
+            Thread.sleep(2000);
             RegionType.click();
+            Thread.sleep(2000);
             LocalizedEventType.click();
+            Thread.sleep(2000);
 
             DateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
             Date date = new Date();
