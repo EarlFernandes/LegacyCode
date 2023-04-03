@@ -273,7 +273,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Event has not been saved");
             }
-            Thread.sleep(5000);
+            Thread.sleep(12000);
 
         } catch (Exception e) {
 
