@@ -99,8 +99,8 @@ public class AdminButtons extends BaseClass {
     WebElement Save;
 
 //    @FindBy(xpath = "//*[text() = 'Id']/parent::*/following-sibling::*/span")
-//    @FindBy(xpath = "//*[@id='react-admin-title']/span")
-    @FindBy(xpath = "//*[contains(@class, 'MuiTypography-root jss116 MuiTypography-h6 MuiTypography-colorInherit')]/span")
+    @FindBy(xpath = "//*[@id='react-admin-title']/span")
+//    @FindBy(xpath = "//*[contains(@class, 'MuiTypography-root jss116 MuiTypography-h6 MuiTypography-colorInherit')]/span")
     WebElement EventID;
 
     public AdminButtons(WebDriver driver) {
