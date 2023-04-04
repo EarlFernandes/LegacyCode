@@ -273,6 +273,16 @@ public class AdminButtons extends BaseClass {
             Thread.sleep(2000);
             if(Save.isDisplayed()) {
                 Save.click();
+                String element_text = Save.getText();
+                String classAttribute = Save.getAttribute("class");
+                String tagname = Save.getTagName();
+                String width = Save.getCssValue("width");
+                String getPageSource = driver.getPageSource();
+                System.out.println(element_text);
+                System.out.println(classAttribute);
+                System.out.println(tagname);
+                System.out.println(width);
+                System.out.println(getPageSource);
                 System.out.println("Event has been saved");
             }
             else {
