@@ -1,3 +1,4 @@
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -267,6 +268,9 @@ public class AdminButtons extends BaseClass {
                 System.out.println("LocalizedName of the event has not been added");
             }
             Thread.sleep(5000);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,250)", "");
+            Thread.sleep(2000);
             if(Save.isDisplayed()) {
                 Save.click();
                 System.out.println("Event has been saved");
