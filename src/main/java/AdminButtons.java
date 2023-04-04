@@ -268,7 +268,7 @@ public class AdminButtons extends BaseClass {
             }
             Thread.sleep(5000);
             if(Save.isDisplayed()) {
-                Save.sendKeys(Keys.ENTER);
+                Save.click();
                 System.out.println("Event has been saved");
             }
             else {
