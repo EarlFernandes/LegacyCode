@@ -24,7 +24,7 @@ public class BaseClass {
         opt.addArguments("--remote-allow-origins=*");
         opt.addArguments("--start-maximized");
         opt.addArguments("headless");
-        opt.addArguments("--disable-dev-shm-usage");
+        opt.addArguments("disable-dev-shm-usage");
         opt.addArguments("no-sandbox"); // https://stackoverflow.com/questions/50642308/webdriverexception-unknown-error-devtoolsactiveport-file-doesnt-exist-while-t
         driver = new ChromeDriver(opt);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
