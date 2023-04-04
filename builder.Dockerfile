@@ -12,3 +12,13 @@ RUN apt-get update \
     && apt-get install -y google-chrome-stable libxss1 \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
+
+# environment setup
+ENV TEST_HOME=/jmeter-test
+
+#  set up working folder for the tests
+COPY . $TEST_HOME
+WORKDIR $TEST_HOME
+
+# install dependencies
+RUN mvn clean install
