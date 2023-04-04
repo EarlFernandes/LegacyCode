@@ -131,6 +131,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("ParticipantType dropdown not opened");
             }
+            Thread.sleep(2000);
             if(IndividualParticipantType.isDisplayed()) {
                 IndividualParticipantType.click();
                 System.out.println("IndividualParticipantType from dropdown has been selected");
@@ -138,6 +139,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("IndividualParticipantType from dropdown has not been selected");
             }
+            Thread.sleep(2000);
             if(CompetitionType.isDisplayed()) {
                 CompetitionType.click();
                 System.out.println("CompetitionType dropdown is opened");
@@ -145,6 +147,7 @@ public class AdminButtons extends BaseClass {
             else{
                 System.out.println("CompetitionType dropdown is not opened");
             }
+            Thread.sleep(2000);
             if(TournamentType.isDisplayed()) {
                 TournamentType.click();
                 System.out.println("TournamentType is selected from dropdown");
@@ -152,6 +155,7 @@ public class AdminButtons extends BaseClass {
             else{
                 System.out.println("TournamentType is not selected from dropdown");
             }
+            Thread.sleep(2000);
             if(TournamentFormat.isDisplayed()) {
                 TournamentFormat.click();
                 System.out.println("TournamentFormat dropdown is opened");
@@ -159,6 +163,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("TournamentFormat dropdown is not opened");
             }
+            Thread.sleep(2000);
             if(SingleElimination.isDisplayed()) {
                 SingleElimination.click();
                 System.out.println("SingleElimination is selected from dropdown");
@@ -166,6 +171,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("SingleElimination is not selected from dropdown");
             }
+            Thread.sleep(2000);
             if(Game.isDisplayed()) {
                 Game.click();
                 System.out.println("Game dropdown has been opened");
@@ -173,6 +179,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Game dropdown has not been opened");
             }
+            Thread.sleep(2000);
             if(LeagueofLegends.isDisplayed()) {
                 LeagueofLegends.click();
                 System.out.println("LeagueofLegends has been selected from dropdown");
@@ -180,6 +187,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("LeagueofLegends has not been selected from dropdown");
             }
+            Thread.sleep(2000);
             if(GameAccType.isDisplayed()) {
                 GameAccType.click();
                 System.out.println("GameAccType dropdown has been opened");
@@ -187,6 +195,7 @@ public class AdminButtons extends BaseClass {
             else{
                 System.out.println("GameAccType dropdown has not been opened");
             }
+            Thread.sleep(2000);
             if(GameAccTypeID.isDisplayed()) {
                 GameAccTypeID.click();
                 System.out.println("GameAccTypeID has been selected from dropdown");
@@ -194,6 +203,7 @@ public class AdminButtons extends BaseClass {
             else{
                 System.out.println("GameAccTypeID has not been selected from dropdown");
             }
+            Thread.sleep(2000);
 
             if(StartTime.isDisplayed()) {
                 StartTime.sendKeys("002023-12-310200AM");
@@ -202,6 +212,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("StartTime has not been entered");
             }
+            Thread.sleep(2000);
             if(RegistrationOpen.isDisplayed()) {
                 RegistrationOpen.sendKeys("002023-03-270200AM");
                 System.out.println("RegistrationOpen time has been entered");
@@ -209,6 +220,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("RegistrationOpen time has not been entered");
             }
+            Thread.sleep(2000);
             if(RegistrationClose.isDisplayed()) {
                 RegistrationClose.sendKeys("002023-12-310100AM");
                 System.out.println("RegistrationClose time has been entered");
@@ -216,6 +228,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("RegistrationClose time has not been entered");
             }
+            Thread.sleep(2000);
             if(DetailsTab.isDisplayed()) {
                 DetailsTab.click();
                 System.out.println("DetailsTab has been opened");
@@ -231,6 +244,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Category dropdown has not been opened");
             }
+            Thread.sleep(2000);
             if(CategoryType.isDisplayed()) {
                 CategoryType.click();
                 System.out.println("CategoryType has been selected");
@@ -238,6 +252,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("CategoryType has not been selected");
             }
+            Thread.sleep(2000);
             if(Region.isDisplayed()) {
                 Region.click();
                 System.out.println("Region dropdown has been opened");
@@ -245,6 +260,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Region dropdown has not been opened");
             }
+            Thread.sleep(2000);
             if(RegionType.isDisplayed()) {
                 RegionType.click();
                 System.out.println("RegionType has been selected from dropdown");
@@ -252,6 +268,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("RegionType has not been selected from dropdown");
             }
+            Thread.sleep(2000);
             if(LocalizedEventType.isDisplayed()) {
                 LocalizedEventType.click();
                 System.out.println("LocalizedEventType has been opened");
@@ -259,6 +276,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("LocalizedEventType has not been opened");
             }
+            Thread.sleep(2000);
 
             DateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
             Date date = new Date();
@@ -276,7 +294,6 @@ public class AdminButtons extends BaseClass {
             js.executeScript("window.scrollBy(0,250)", "");
             Thread.sleep(2000);
             if(Save.isDisplayed()) {
-//                Save.click();
                 String element_text = Save.getText();
                 String classAttribute = Save.getAttribute("class");
                 String tagname = Save.getTagName();
