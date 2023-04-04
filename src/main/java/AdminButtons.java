@@ -273,18 +273,17 @@ public class AdminButtons extends BaseClass {
             js.executeScript("window.scrollBy(0,250)", "");
             Thread.sleep(2000);
             if(Save.isDisplayed()) {
-                Save.click();
+//                Save.click();
                 String element_text = Save.getText();
                 String classAttribute = Save.getAttribute("class");
                 String tagname = Save.getTagName();
                 String width = Save.getCssValue("width");
-                String getPageSource = driver.getPageSource();
                 System.out.println(element_text);
                 System.out.println(classAttribute);
                 System.out.println(tagname);
                 System.out.println(width);
-                System.out.println(getPageSource);
-                System.out.println("Event has been saved");
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", Save);
             }
             else {
                 System.out.println("Event has not been saved");

@@ -22,7 +22,7 @@
 <!--            <class name="HomePageSmokeTestEtisalat"/>-->
 <!--            <class name="CreateTeamEtisalat"/>-->
 <!--            <class name="RegisterNewUserEtisalat"/>-->
-            <class name="CreateTournamentEtisalat"/>
+<!--            <class name="CreateTournamentEtisalat"/>-->
 <!--            <class name="JoinTournamentEtisalat"/>-->
         </classes>
     </test>
@@ -31,7 +31,7 @@
 <!--            <class name="HomePageSmokeTestOoredoo"/>-->
 <!--            <class name="CreateTeamOoredoo"/>-->
 <!--            <class name="RegisterNewUserOoredoo"/>-->
-            <class name="CreateTournamentOoredoo"/>
+<!--            <class name="CreateTournamentOoredoo"/>-->
 <!--            <class name="JoinTournamentOoredoo"/>-->
         </classes>
     </test>
