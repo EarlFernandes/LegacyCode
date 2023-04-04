@@ -98,8 +98,11 @@ public class AdminButtons extends BaseClass {
     WebElement LocalizedName;
 
 //    @FindBy(xpath = "//*[contains(@type, 'submit')]")
-    @FindBy(xpath = "//*[contains(@class, 'MuiButton')]//*[text() = 'Save']")
+    @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiButton-root MuiButton-contained')]//*[text() = 'Save']")
     WebElement Save;
+
+    @FindBy(xpath = "//*[text() = 'The form is not valid. Please check for errors']")
+    WebElement ErrorOnSave;
 
 //    @FindBy(xpath = "//*[text() = 'Id']/parent::*/following-sibling::*/span")
     @FindBy(xpath = "//*[@id='react-admin-title']/span")
@@ -282,8 +285,10 @@ public class AdminButtons extends BaseClass {
                 System.out.println(classAttribute);
                 System.out.println(tagname);
                 System.out.println(width);
-                JavascriptExecutor executor = (JavascriptExecutor)driver;
-                executor.executeScript("arguments[0].click();", Save);
+                Save.click();
+                if (ErrorOnSave.isDisplayed()){
+                    System.out.println("There is an error on clicking save");
+                }
             }
             else {
                 System.out.println("Event has not been saved");
