@@ -1,12 +1,12 @@
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.Random;
 
@@ -124,6 +124,7 @@ public class AdminButtons extends BaseClass {
 //            Thread.sleep(5000);
             CreateEvent.click();
             Thread.sleep(5000);
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(ParticipantType));
             if(ParticipantType.isDisplayed()) {
                 ParticipantType.click();
                 System.out.println("ParticipantType dropdown opened");
@@ -131,6 +132,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("ParticipantType dropdown not opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(IndividualParticipantType));
             if(IndividualParticipantType.isDisplayed()) {
                 IndividualParticipantType.click();
                 System.out.println("IndividualParticipantType from dropdown has been selected");
@@ -138,6 +140,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("IndividualParticipantType from dropdown has not been selected");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(CompetitionType));
             if(CompetitionType.isDisplayed()) {
                 CompetitionType.click();
                 System.out.println("CompetitionType dropdown is opened");
@@ -145,6 +148,7 @@ public class AdminButtons extends BaseClass {
             else{
                 System.out.println("CompetitionType dropdown is not opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(TournamentType));
             if(TournamentType.isDisplayed()) {
                 TournamentType.click();
                 System.out.println("TournamentType is selected from dropdown");
@@ -152,6 +156,7 @@ public class AdminButtons extends BaseClass {
             else{
                 System.out.println("TournamentType is not selected from dropdown");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(TournamentFormat));
             if(TournamentFormat.isDisplayed()) {
                 TournamentFormat.click();
                 System.out.println("TournamentFormat dropdown is opened");
@@ -159,6 +164,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("TournamentFormat dropdown is not opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(SingleElimination));
             if(SingleElimination.isDisplayed()) {
                 SingleElimination.click();
                 System.out.println("SingleElimination is selected from dropdown");
@@ -166,6 +172,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("SingleElimination is not selected from dropdown");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(Game));
             if(Game.isDisplayed()) {
                 Game.click();
                 System.out.println("Game dropdown has been opened");
@@ -173,6 +180,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Game dropdown has not been opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(LeagueofLegends));
             if(LeagueofLegends.isDisplayed()) {
                 LeagueofLegends.click();
                 System.out.println("LeagueofLegends has been selected from dropdown");
@@ -180,6 +188,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("LeagueofLegends has not been selected from dropdown");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(GameAccType));
             if(GameAccType.isDisplayed()) {
                 GameAccType.click();
                 System.out.println("GameAccType dropdown has been opened");
@@ -187,6 +196,7 @@ public class AdminButtons extends BaseClass {
             else{
                 System.out.println("GameAccType dropdown has not been opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(GameAccTypeID));
             if(GameAccTypeID.isDisplayed()) {
                 GameAccTypeID.click();
                 System.out.println("GameAccTypeID has been selected from dropdown");
@@ -195,6 +205,7 @@ public class AdminButtons extends BaseClass {
                 System.out.println("GameAccTypeID has not been selected from dropdown");
             }
 
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(StartTime));
             if(StartTime.isDisplayed()) {
                 StartTime.sendKeys("002023-12-310200AM");
                 System.out.println("StartTime has been entered");
@@ -202,6 +213,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("StartTime has not been entered");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(RegistrationOpen));
             if(RegistrationOpen.isDisplayed()) {
                 RegistrationOpen.sendKeys("002023-03-270200AM");
                 System.out.println("RegistrationOpen time has been entered");
@@ -209,6 +221,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("RegistrationOpen time has not been entered");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(RegistrationClose));
             if(RegistrationClose.isDisplayed()) {
                 RegistrationClose.sendKeys("002023-12-310100AM");
                 System.out.println("RegistrationClose time has been entered");
@@ -216,6 +229,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("RegistrationClose time has not been entered");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(DetailsTab));
             if(DetailsTab.isDisplayed()) {
                 DetailsTab.click();
                 System.out.println("DetailsTab has been opened");
@@ -223,6 +237,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("DetailsTab has not been opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(Category));
             if(Category.isDisplayed()) {
                 Category.click();
                 System.out.println("Category dropdown has been opened");
@@ -230,6 +245,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Category dropdown has not been opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(CategoryType));
             if(CategoryType.isDisplayed()) {
                 CategoryType.click();
                 System.out.println("CategoryType has been selected");
@@ -237,6 +253,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("CategoryType has not been selected");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(Region));
             if(Region.isDisplayed()) {
                 Region.click();
                 System.out.println("Region dropdown has been opened");
@@ -244,6 +261,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Region dropdown has not been opened");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(RegionType));
             if(RegionType.isDisplayed()) {
                 RegionType.click();
                 System.out.println("RegionType has been selected from dropdown");
@@ -251,6 +269,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("RegionType has not been selected from dropdown");
             }
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(LocalizedEventType));
             if(LocalizedEventType.isDisplayed()) {
                 LocalizedEventType.click();
                 System.out.println("LocalizedEventType has been opened");
@@ -263,6 +282,7 @@ public class AdminButtons extends BaseClass {
             Date date = new Date();
             String date1 = dateformat.format(date);
 
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(LocalizedName));
             if(LocalizedName.isDisplayed()) {
                 LocalizedName.sendKeys("Event " + date1);
                 System.out.println("LocalizedName of the event has been added");
@@ -274,6 +294,7 @@ public class AdminButtons extends BaseClass {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,250)", "");
             Thread.sleep(2000);
+            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(Save));
             if(Save.isDisplayed()) {
                 String element_text = Save.getText();
                 String classAttribute = Save.getAttribute("class");
@@ -291,7 +312,7 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("Event has not been saved");
             }
-            Thread.sleep(12000);
+            Thread.sleep(5000);
 
         } catch (Exception e) {
 
