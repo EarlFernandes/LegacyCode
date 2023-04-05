@@ -2,6 +2,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.DateFormat;
@@ -125,9 +126,12 @@ public class AdminButtons extends BaseClass {
             CreateEvent.click();
             Thread.sleep(5000);
             new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(ParticipantType));
+
             if(ParticipantType.isDisplayed()) {
-                ParticipantType.click();
-                System.out.println("ParticipantType dropdown opened");
+                Select sel = new Select(ParticipantType);
+                sel.selectByVisibleText("Individual");
+//                ParticipantType.click();
+//                System.out.println("ParticipantType dropdown opened");
             }
             else {
                 System.out.println("ParticipantType dropdown not opened");
