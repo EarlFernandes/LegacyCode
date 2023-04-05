@@ -99,7 +99,7 @@ public class AdminButtons extends BaseClass {
     WebElement LocalizedName;
 
 //    @FindBy(xpath = "//*[contains(@type, 'submit')]")
-    @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiButton-root MuiButton-contained jss321 MuiButton-containedPrimary')]")
+    @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiButton-root MuiButton-contained')]//*[text() = 'Save']")
     WebElement Save;
 
     @FindBy(xpath = "//*[text() = 'Required']")
@@ -128,26 +128,28 @@ public class AdminButtons extends BaseClass {
             new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(ParticipantType));
 
             if(ParticipantType.isDisplayed()) {
-                Select sel = new Select(ParticipantType);
-                sel.selectByVisibleText("Individual");
-//                ParticipantType.click();
+//                Select sel = new Select(ParticipantType);
+//                sel.selectByVisibleText("Individual");
+                ParticipantType.sendKeys(Keys.ENTER);
 //                System.out.println("ParticipantType dropdown opened");
             }
             else {
                 System.out.println("ParticipantType dropdown not opened");
             }
-            String PartType = ParticipantType.getAttribute("value");
-            System.out.println("Participant Type dropdown inputted value is: "+PartType);
-            new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(IndividualParticipantType));
+            new WebDriverWait (driver, 20).until(ExpectedConditions.elementToBeClickable(IndividualParticipantType));
             if(IndividualParticipantType.isDisplayed()) {
-                IndividualParticipantType.click();
+                IndividualParticipantType.sendKeys(Keys.ENTER);
                 System.out.println("IndividualParticipantType from dropdown has been selected");
             }
             else {
                 System.out.println("IndividualParticipantType from dropdown has not been selected");
             }
             String IndPartType = IndividualParticipantType.getAttribute("value");
-            System.out.println("Individual Participant Type dropdown inputted value is: " + IndPartType);
+            String IndParttext = IndividualParticipantType.getText();
+            System.out.println("Individual Participant Type dropdown inputted attribute value is: " + IndPartType);
+            System.out.println("Individual Participant Type dropdown text value is " + IndParttext);
+            String PartType = ParticipantType.getText();
+            System.out.println("Participant Type dropdown inputted value is: "+PartType);
             new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(CompetitionType));
             if(CompetitionType.isDisplayed()) {
                 CompetitionType.click();
@@ -314,7 +316,7 @@ public class AdminButtons extends BaseClass {
                 System.out.println(width);
                 Save.click();
                 Thread.sleep(2000);
-                new WebDriverWait (driver, 60).until(ExpectedConditions.visibilityOf(ErrorOnSave));
+                //new WebDriverWait (driver, 60).until(ExpectedConditions.visibilityOf(ErrorOnSave));
             }
             else {
                 System.out.println("Event has not been saved");
