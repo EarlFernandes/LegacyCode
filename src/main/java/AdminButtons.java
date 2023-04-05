@@ -98,7 +98,7 @@ public class AdminButtons extends BaseClass {
     WebElement LocalizedName;
 
 //    @FindBy(xpath = "//*[contains(@type, 'submit')]")
-    @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiButton-root MuiButton-contained')]//*[text() = 'Save']")
+    @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiButton-root MuiButton-contained jss321 MuiButton-containedPrimary')]")
     WebElement Save;
 
     @FindBy(xpath = "//*[text() = 'Required']")
