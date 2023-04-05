@@ -306,12 +306,7 @@ public class AdminButtons extends BaseClass {
                 System.out.println(width);
                 Save.click();
                 Thread.sleep(2000);
-                if (ErrorOnSave.isDisplayed()){
-                    System.out.println("There is an error on clicking save");
-                }
-                else {
-                    System.out.println("No errors / Required fields reported on clicking save");
-                }
+                new WebDriverWait (driver, 60).until(ExpectedConditions.visibilityOf(ErrorOnSave));
             }
             else {
                 System.out.println("Event has not been saved");
