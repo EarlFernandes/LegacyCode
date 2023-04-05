@@ -132,6 +132,8 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("ParticipantType dropdown not opened");
             }
+            String PartType = ParticipantType.getAttribute("value");
+            System.out.println("Participant Type dropdown inputted value is: "+PartType);
             new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(IndividualParticipantType));
             if(IndividualParticipantType.isDisplayed()) {
                 IndividualParticipantType.click();
@@ -140,6 +142,8 @@ public class AdminButtons extends BaseClass {
             else {
                 System.out.println("IndividualParticipantType from dropdown has not been selected");
             }
+            String IndPartType = IndividualParticipantType.getAttribute("value");
+            System.out.println("Individual Participant Type dropdown inputted value is: " + IndPartType);
             new WebDriverWait (driver, 20).until(ExpectedConditions.visibilityOf(CompetitionType));
             if(CompetitionType.isDisplayed()) {
                 CompetitionType.click();
