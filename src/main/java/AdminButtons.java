@@ -101,7 +101,7 @@ public class AdminButtons extends BaseClass {
     @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiButton-root MuiButton-contained')]//*[text() = 'Save']")
     WebElement Save;
 
-    @FindBy(xpath = "//*[text() = 'The form is not valid. Please check for errors']")
+    @FindBy(xpath = "//*[text() = 'Required']")
     WebElement ErrorOnSave;
 
 //    @FindBy(xpath = "//*[text() = 'Id']/parent::*/following-sibling::*/span")
@@ -305,8 +305,12 @@ public class AdminButtons extends BaseClass {
                 System.out.println(tagname);
                 System.out.println(width);
                 Save.click();
+                Thread.sleep(2000);
                 if (ErrorOnSave.isDisplayed()){
                     System.out.println("There is an error on clicking save");
+                }
+                else {
+                    System.out.println("No errors / Required fields reported on clicking save");
                 }
             }
             else {
