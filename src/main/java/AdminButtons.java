@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -339,6 +340,12 @@ public class AdminButtons extends BaseClass {
         System.out.println("------------ writing page source to fileName: -----------");
         // write this out to a file in the root directory
         try {
+            // create a new directory called /exports (if necessary)
+            File dir = new File("/exports");
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+
             FileWriter fw = new FileWriter("/exports/" + fileName);
             fw.write(driver.getPageSource());
             fw.close();
