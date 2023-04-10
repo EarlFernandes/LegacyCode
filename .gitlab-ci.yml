@@ -20,9 +20,9 @@ test:
     - mvn clean test
   artifacts:
     when: always
-    # add an artifact for pageSource.html
+    # add an artifact for dumps
     paths:
-      - exports/*.html
+      - exports/*
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml

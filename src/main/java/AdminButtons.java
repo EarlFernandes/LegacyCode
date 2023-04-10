@@ -1,3 +1,4 @@
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -353,6 +354,10 @@ public class AdminButtons extends BaseClass {
             FileWriter fw = new FileWriter(exportPath + fileName);
             fw.write(driver.getPageSource());
             fw.close();
+            
+            // get a screenshot from the selenium webdriver
+            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File(exportPath + fileName + "_screenshot.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -371,5 +376,4 @@ public class AdminButtons extends BaseClass {
         System.out.println("Extracted UUID from the event element is: " + eventUUID);
         return eventUUID;
     }
-
 }
