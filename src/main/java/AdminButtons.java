@@ -220,6 +220,7 @@ public class AdminButtons extends BaseClass {
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(StartTime));
         if (StartTime.isDisplayed()) {
             StartTime.click();
+            StartTime.clear();
             StartTime.sendKeys("002023-12-310200AM");
             System.out.println("StartTime has been entered");
         } else {
@@ -231,6 +232,7 @@ public class AdminButtons extends BaseClass {
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationOpen));
         if (RegistrationOpen.isDisplayed()) {
             RegistrationOpen.click();
+            RegistrationOpen.clear();
             RegistrationOpen.sendKeys("002023-03-270200AM");
             System.out.println("RegistrationOpen time has been entered");
         } else {
@@ -241,6 +243,7 @@ public class AdminButtons extends BaseClass {
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationClose));
         if (RegistrationClose.isDisplayed()) {
             RegistrationClose.click();
+            RegistrationClose.clear();
             RegistrationClose.sendKeys("002023-12-310100AM");
             System.out.println("RegistrationClose time has been entered");
         } else {
