@@ -349,12 +349,14 @@ public class AdminButtons extends BaseClass {
             String currentDir = System.getProperty("user.dir");
             System.out.println("currentDir: " + currentDir);
             String exportPath = currentDir + "/exports/";
+
             // create a new directory called /exports (if necessary)
             File dir = new File(exportPath);
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
+            // write out the HTML
             FileWriter fw = new FileWriter(exportPath + fileName);
             fw.write(driver.getPageSource());
             fw.close();
