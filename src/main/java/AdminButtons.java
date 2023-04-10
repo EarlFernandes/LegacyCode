@@ -1,5 +1,6 @@
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -218,10 +219,9 @@ public class AdminButtons extends BaseClass {
         System.out.println("Game account type dropdown inputted value is " + GameAccTypetext);
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(StartTime));
+        Actions act = new Actions(driver);
         if (StartTime.isDisplayed()) {
-            StartTime.click();
-            StartTime.clear();
-            StartTime.sendKeys("002023-12-310200AM");
+            act.sendKeys(StartTime,"002023-12-310200AM");
             System.out.println("StartTime has been entered");
         } else {
             System.out.println("StartTime has not been entered");
@@ -231,9 +231,7 @@ public class AdminButtons extends BaseClass {
         System.out.println("Star time inputted value is " + StartTimetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationOpen));
         if (RegistrationOpen.isDisplayed()) {
-            RegistrationOpen.click();
-            RegistrationOpen.clear();
-            RegistrationOpen.sendKeys("002023-03-270200AM");
+            act.sendKeys(RegistrationOpen, "002023-03-270200AM");
             System.out.println("RegistrationOpen time has been entered");
         } else {
             System.out.println("RegistrationOpen time has not been entered");
@@ -242,9 +240,7 @@ public class AdminButtons extends BaseClass {
         System.out.println("Registration open inputted value is " + RegOpentext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationClose));
         if (RegistrationClose.isDisplayed()) {
-            RegistrationClose.click();
-            RegistrationClose.clear();
-            RegistrationClose.sendKeys("002023-12-310100AM");
+            act.sendKeys(RegistrationClose, "002023-12-310100AM");
             System.out.println("RegistrationClose time has been entered");
         } else {
             System.out.println("RegistrationClose time has not been entered");
