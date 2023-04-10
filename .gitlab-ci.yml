@@ -13,7 +13,6 @@ build-builder:
     - docker push $BUILDER_IMAGE
   when: manual
 
-
 test:
   image: registry.swarmio.gg/earl/jmeter-tests:builder #use a custom image that we've built from the pre-step
   stage: test
@@ -21,6 +20,9 @@ test:
     - mvn clean test
   artifacts:
     when: always
+    # add an artifact for pageSource.html
+    paths:
+      - pageSource.html
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml

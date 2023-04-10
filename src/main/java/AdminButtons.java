@@ -5,6 +5,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -331,6 +333,14 @@ public class AdminButtons extends BaseClass {
     private void printPageSource() {
         System.out.println("------------ page source -----------");
         System.out.println(driver.getPageSource());
+        // write this out to a file in the root directory
+        try {
+            FileWriter fw = new FileWriter("pageSource.html");
+            fw.write(driver.getPageSource());
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
     public String getNewlySavedEventID() {
