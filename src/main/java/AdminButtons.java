@@ -108,7 +108,7 @@ public class AdminButtons extends BaseClass {
     @FindBy(xpath = "//*[@id='react-admin-title']/span")
     // @FindBy(xpath = "//*[contains(@class, 'MuiTypography-root jss116
     // MuiTypography-h6 MuiTypography-colorInherit')]/span")
-    WebElement SavedEventIDElement; // an element that we're hoping has the event ID in it
+    WebElement TitleElement; // an element that we're hoping has the event ID in it
 
     public AdminButtons(WebDriver driver) {
         this.driver = driver;
@@ -322,13 +322,19 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("Event has not been saved");
         }
-        Thread.sleep(5000);
-        Thread.sleep(5000);
+
+        Thread.sleep(5000); // wait (hopefully) for the event to be saved
+        printPageSource();
         return getNewlySavedEventID();
     }
 
+    private void printPageSource() {
+        System.out.println("------------ page source -----------");
+        System.out.println(driver.getPageSource());
+
+    }
     public String getNewlySavedEventID() {
-        String Eventid = SavedEventIDElement.getText();
+        String Eventid = TitleElement.getText();
         System.out.println("Current string on the event element is: " + Eventid);
         /**
          * if our header is something like
@@ -337,8 +343,6 @@ public class AdminButtons extends BaseClass {
          */
         String eventUUID = Eventid.substring(8, 44);
         System.out.println("Extracted UUID from the event element is: " + eventUUID);
-
-        // String Eventid2 = "Event has been created";
         return eventUUID;
     }
 
