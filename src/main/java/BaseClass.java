@@ -13,7 +13,6 @@ public class BaseClass {
     WebDriver driver;
     @BeforeClass
     public void setupApplication() {
-
         WebDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("--window-size=1920,1080");
