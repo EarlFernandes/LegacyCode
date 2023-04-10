@@ -326,16 +326,20 @@ public class AdminButtons extends BaseClass {
         }
 
         Thread.sleep(5000); // wait (hopefully) for the event to be saved
-        printPageSource();
+        writeCurrentPageSource("afterSave.html");
         return getNewlySavedEventID();
     }
 
-    private void printPageSource() {
-        System.out.println("------------ page source -----------");
-        System.out.println(driver.getPageSource());
+    /**
+     * Write the current page source to a file to download & inspect
+     * 
+     * @param fileName the name of the file to write to
+     */
+    private void writeCurrentPageSource(String fileName) {
+        System.out.println("------------ writing page source to fileName: -----------");
         // write this out to a file in the root directory
         try {
-            FileWriter fw = new FileWriter("pageSource.html");
+            FileWriter fw = new FileWriter("/exports/" + fileName);
             fw.write(driver.getPageSource());
             fw.close();
         } catch (IOException e) {
@@ -343,6 +347,7 @@ public class AdminButtons extends BaseClass {
         }
 
     }
+
     public String getNewlySavedEventID() {
         String Eventid = TitleElement.getText();
         System.out.println("Current string on the event element is: " + Eventid);

@@ -22,7 +22,7 @@ test:
     when: always
     # add an artifact for pageSource.html
     paths:
-      - pageSource.html
+      - exports/*.html
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml
