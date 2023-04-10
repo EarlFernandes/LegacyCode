@@ -30,4 +30,4 @@ RUN mvn clean install -Dmaven.test.skip=true
 # docker build -t jmeter-test:latest -f builder.Dockerfile .
 
 # run this docker image and attach the terminal
-# docker run -it --rm --name jmeter-test -v $(pwd):/jmeter-test jmeter-test:latest /bin/bash
+# docker run -it --rm --name jmeter-test -v $(pwd):/jmeter-test registry.swarmio.gg/earl/jmeter:builder /bin/bash
