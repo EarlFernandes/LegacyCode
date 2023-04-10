@@ -337,7 +337,7 @@ public class AdminButtons extends BaseClass {
      * @param fileName the name of the file to write to
      */
     private void writeCurrentPageSource(String fileName) {
-        System.out.println("------------ writing page source to fileName: -----------");
+        System.out.println(String.format("------------ writing page source to fileName: %s -----------", fileName));
         // write this out to a file in the root directory
         try {
             // create a new directory called /exports (if necessary)
@@ -346,7 +346,7 @@ public class AdminButtons extends BaseClass {
                 dir.mkdir();
             }
 
-            FileWriter fw = new FileWriter("/exports/" + fileName);
+            FileWriter fw = new FileWriter("exports/" + fileName);
             fw.write(driver.getPageSource());
             fw.close();
         } catch (IOException e) {
