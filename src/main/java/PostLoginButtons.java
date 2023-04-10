@@ -75,7 +75,9 @@ public class PostLoginButtons extends BaseClass {
             Dropdown.click();
             Teams.click();
             AddTeam.click();
-            TeamName.sendKeys("Earl's team" + getRandomNumber());
+            String TeamsName = "Earl's team" + getRandomNumber();
+            TeamName.sendKeys(TeamsName);
+            System.out.println("Team's name is: " + TeamsName);
             Thread.sleep(5000);
             CreateTeamButton.sendKeys(Keys.ENTER);
             String TeamcreationMessage = TeamCreationMsg.getText();
