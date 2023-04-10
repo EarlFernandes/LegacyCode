@@ -340,13 +340,17 @@ public class AdminButtons extends BaseClass {
         System.out.println(String.format("------------ writing page source to fileName: %s -----------", fileName));
         // write this out to a file in the root directory
         try {
+            // get the current project directory
+            String currentDir = System.getProperty("user.dir");
+            System.out.println("currentDir: " + currentDir);
+            String exportPath = currentDir + "/exports/";
             // create a new directory called /exports (if necessary)
-            File dir = new File("/exports");
+            File dir = new File(exportPath);
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            FileWriter fw = new FileWriter("exports/" + fileName);
+            FileWriter fw = new FileWriter(exportPath + fileName);
             fw.write(driver.getPageSource());
             fw.close();
         } catch (IOException e) {
