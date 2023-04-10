@@ -243,6 +243,10 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("RegistrationClose time has not been entered");
         }
+
+        writeCurrentPageSource("CreateEvent(firstPageTab).html");
+
+
         String RegClosetext = RegistrationClose.getText();
         System.out.println("Registration close inputted value is " + RegClosetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(DetailsTab));
