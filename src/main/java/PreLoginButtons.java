@@ -71,7 +71,7 @@ public class PreLoginButtons extends BaseClass {
         try {
             if (Watch.isDisplayed()) {
                 Watch.click();
-                Thread.sleep(8000);
+                Thread.sleep(10000);
             } else {
                 System.out.println("Watch button not displayed on navbar");
             }
