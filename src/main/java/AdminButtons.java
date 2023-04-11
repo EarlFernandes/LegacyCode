@@ -220,7 +220,7 @@ public class AdminButtons extends BaseClass {
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(StartTime));
         if (StartTime.isDisplayed()) {
-            StartTime.sendKeys("12310020230200");
+            StartTime.sendKeys("12310020230200AM");
             System.out.println("StartTime has been entered");
         } else {
             System.out.println("StartTime has not been entered");
@@ -230,7 +230,7 @@ public class AdminButtons extends BaseClass {
         System.out.println("Star time inputted value is " + StartTimetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationOpen));
         if (RegistrationOpen.isDisplayed()) {
-            RegistrationOpen.sendKeys( "01310020230200");
+            RegistrationOpen.sendKeys( "01310020230200AM");
             System.out.println("RegistrationOpen time has been entered");
         } else {
             System.out.println("RegistrationOpen time has not been entered");
@@ -239,7 +239,7 @@ public class AdminButtons extends BaseClass {
         System.out.println("Registration open inputted value is " + RegOpentext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationClose));
         if (RegistrationClose.isDisplayed()) {
-            RegistrationClose.sendKeys("12310020230100");
+            RegistrationClose.sendKeys("12310020230100AM");
             System.out.println("RegistrationClose time has been entered");
         } else {
             System.out.println("RegistrationClose time has not been entered");
