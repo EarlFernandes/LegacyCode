@@ -146,12 +146,6 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("IndividualParticipantType from dropdown has not been selected");
         }
-        String IndPartType = IndividualParticipantType.getAttribute("value");
-        String IndParttext = IndividualParticipantType.getText();
-        System.out.println("Individual Participant Type dropdown inputted attribute value is: " + IndPartType);
-        System.out.println("Individual Participant Type dropdown text value is " + IndParttext);
-        String PartType = ParticipantType.getText();
-        System.out.println("Participant Type dropdown inputted value is: " + PartType);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CompetitionType));
         if (CompetitionType.isDisplayed()) {
             CompetitionType.click();
@@ -166,8 +160,6 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("TournamentType is not selected from dropdown");
         }
-        String Comptypetext = CompetitionType.getText();
-        System.out.println("Competition Type dropdown inputted value is " + Comptypetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(TournamentFormat));
         if (TournamentFormat.isDisplayed()) {
             TournamentFormat.click();
@@ -182,8 +174,6 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("SingleElimination is not selected from dropdown");
         }
-        String TourFormattext = TournamentFormat.getText();
-        System.out.println("Tournament Format dropdown inputted value is " + TourFormattext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Game));
         if (Game.isDisplayed()) {
             Game.click();
@@ -198,8 +188,6 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("LeagueofLegends has not been selected from dropdown");
         }
-        String GameText = Game.getText();
-        System.out.println("Game dropdown inputted value is " + GameText);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(GameAccType));
         if (GameAccType.isDisplayed()) {
             GameAccType.click();
@@ -214,32 +202,27 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("GameAccTypeID has not been selected from dropdown");
         }
-        Thread.sleep(2000);
-        String GameAccTypetext = GameAccType.getText();
-        System.out.println("Game account type dropdown inputted value is " + GameAccTypetext);
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(StartTime));
         if (StartTime.isDisplayed()) {
-            StartTime.sendKeys("12310020230200AM");
+//            StartTime.sendKeys("002023-12-310200AM"); //For running it local
+            StartTime.sendKeys("12310020230200AM"); // For running it on docker image
             System.out.println("StartTime has been entered");
         } else {
             System.out.println("StartTime has not been entered");
         }
-        Thread.sleep(2000);
-        String StartTimetext = StartTime.getText();
-        System.out.println("Star time inputted value is " + StartTimetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationOpen));
         if (RegistrationOpen.isDisplayed()) {
-            RegistrationOpen.sendKeys( "01310020230200AM");
+//            RegistrationOpen.sendKeys("002023-03-270200AM"); //For running it local
+            RegistrationOpen.sendKeys( "01310020230200AM"); // For running it on docker image
             System.out.println("RegistrationOpen time has been entered");
         } else {
             System.out.println("RegistrationOpen time has not been entered");
         }
-        String RegOpentext = RegistrationOpen.getText();
-        System.out.println("Registration open inputted value is " + RegOpentext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationClose));
         if (RegistrationClose.isDisplayed()) {
-            RegistrationClose.sendKeys("12310020230100AM");
+//            RegistrationClose.sendKeys("002023-12-310100AM"); //For running it local
+            RegistrationClose.sendKeys("12310020230100AM"); // For running it on docker image
             System.out.println("RegistrationClose time has been entered");
         } else {
             System.out.println("RegistrationClose time has not been entered");
@@ -247,9 +230,6 @@ public class AdminButtons extends BaseClass {
 
         writeCurrentPageSource("CreateEvent(firstPageTab).html");
 
-
-        String RegClosetext = RegistrationClose.getText();
-        System.out.println("Registration close inputted value is " + RegClosetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(DetailsTab));
         if (DetailsTab.isDisplayed()) {
             DetailsTab.click();
@@ -271,8 +251,6 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("CategoryType has not been selected");
         }
-        String CatTypetext = Category.getText();
-        System.out.println("Category dropdown inputted value is " + CatTypetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Region));
         if (Region.isDisplayed()) {
             Region.click();
@@ -287,8 +265,6 @@ public class AdminButtons extends BaseClass {
         } else {
             System.out.println("RegionType has not been selected from dropdown");
         }
-        String RegionTypetext = Region.getText();
-        System.out.println("Region dropdown inputted value is " + RegionTypetext);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(LocalizedEventType));
         if (LocalizedEventType.isDisplayed()) {
             LocalizedEventType.click();
