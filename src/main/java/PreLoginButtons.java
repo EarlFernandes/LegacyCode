@@ -34,9 +34,6 @@ public class PreLoginButtons extends BaseClass {
     @FindBy(xpath = "//*[@data-semantic='navbar-create-account-link']")
     WebElement Register;
 
-    @FindBy(xpath = "//*[@data-semantic='cards-container-events-view-all']")
-    WebElement Tournaments_ViewMore;
-
     @FindBy(xpath = "//*[contains(@data-cy, 'email')]")
     WebElement Username;
 
@@ -67,72 +64,52 @@ public class PreLoginButtons extends BaseClass {
         PageFactory.initElements(driver, this);
     }
 
-    public String ClickWatch() throws InterruptedException {
+    public void ClickWatch() throws InterruptedException {
         try {
             if (Watch.isDisplayed()) {
                 Watch.click();
-                Thread.sleep(10000);
             } else {
                 System.out.println("Watch button not displayed on navbar");
             }
         } catch (Exception e) {
 
         }
-        Thread.sleep(5000);
-        String title = driver.getTitle();
-        System.out.println(title);
-        return title;
     }
 
-    public String ClientName() throws InterruptedException {
+    public void ClientName() throws InterruptedException {
         try {
             if (Client_name.isDisplayed()) {
                 Client_name.click();
-                Thread.sleep(10000);
             } else {
                 System.out.println("Swarmio logo not displayed on navbar");
             }
         } catch (Exception e) {
 
         }
-        Thread.sleep(5000);
-        String title = driver.getTitle();
-        System.out.println(title);
-        return title;
     }
 
-    public String ClickEvents() throws InterruptedException {
+    public void ClickEvents() throws InterruptedException {
         try {
             if (Events.isDisplayed()) {
                 Events.click();
-                Thread.sleep(12000);
             } else {
                 System.out.println("Events button not displayed on navbar");
             }
         } catch (Exception e) {
 
         }
-        Thread.sleep(5000);
-        String title = driver.getTitle();
-        System.out.println(title);
-        return title;
     }
 
-    public String ClickStore() throws InterruptedException {
+    public void ClickStore() throws InterruptedException {
         try {
             if (Store.isDisplayed()) {
                 Store.click();
-                Thread.sleep(8000);
             } else {
                 System.out.println("Storepage button is not displayed on Navbar");
             }
         } catch (Exception e) {
 
         }
-        Thread.sleep(5000);
-        String title = driver.getTitle();
-        System.out.println(title);
-        return title;
     }
 
     public String Clicklogin() throws InterruptedException {
@@ -164,23 +141,6 @@ public class PreLoginButtons extends BaseClass {
 
         }
         Thread.sleep(5000);
-        String title = driver.getTitle();
-        System.out.println(title);
-        return title;
-    }
-
-    public String ClickTournamentsViewMore() {
-        try {
-            if (Tournaments_ViewMore.isDisplayed()) {
-                Tournaments_ViewMore.click();
-                Thread.sleep(8000);
-            } else {
-                System.out.println("Events page is not displayed");
-            }
-        } catch (Exception e) {
-
-        }
-
         String title = driver.getTitle();
         System.out.println(title);
         return title;
