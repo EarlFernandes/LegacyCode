@@ -124,11 +124,10 @@ public class AdminButtons extends BaseClass {
         Username.sendKeys("earl@swarmio.media");
         Password.sendKeys("qapass1234");
         SignIn.click();
-        Thread.sleep(5000);
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CreateEvent));
         // Events.click();
         // Thread.sleep(5000);
         CreateEvent.click();
-        Thread.sleep(5000);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(ParticipantType));
 
         if (ParticipantType.isDisplayed()) {
@@ -292,14 +291,6 @@ public class AdminButtons extends BaseClass {
         Thread.sleep(2000);
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Save));
         if (Save.isDisplayed()) {
-            String element_text = Save.getText();
-            String classAttribute = Save.getAttribute("class");
-            String tagname = Save.getTagName();
-            String width = Save.getCssValue("width");
-            System.out.println(element_text);
-            System.out.println(classAttribute);
-            System.out.println(tagname);
-            System.out.println(width);
             Save.click();
             Thread.sleep(2000);
             // new WebDriverWait (driver,

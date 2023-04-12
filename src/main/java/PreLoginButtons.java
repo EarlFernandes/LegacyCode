@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Random;
@@ -116,14 +118,13 @@ public class PreLoginButtons extends BaseClass {
         try {
             if (Login.isDisplayed()) {
                 Login.click();
-                Thread.sleep(8000);
+                new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Username));
             } else {
                 System.out.println("Login page is not displayed on navbar");
             }
         } catch (Exception e) {
 
         }
-        Thread.sleep(5000);
         String title = driver.getTitle();
         System.out.println(title);
         return title;
@@ -133,14 +134,13 @@ public class PreLoginButtons extends BaseClass {
         try {
             if (Register.isDisplayed()) {
                 Register.click();
-                Thread.sleep(8000);
+                new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Username));
             } else {
                 System.out.println("Register page is not displayed on navbar");
             }
         } catch (Exception e) {
 
         }
-        Thread.sleep(5000);
         String title = driver.getTitle();
         System.out.println(title);
         return title;
@@ -148,7 +148,6 @@ public class PreLoginButtons extends BaseClass {
 
     public String EnterUsername() {
         try {
-            Thread.sleep(5000);
             Username.sendKeys("earl@swarmio.media");
 
         } catch (Exception e) {
@@ -160,7 +159,6 @@ public class PreLoginButtons extends BaseClass {
 
     public String EnterPassword() {
         try {
-            Thread.sleep(5000);
             Password.sendKeys("qapass1234");
 
         } catch (Exception e) {
@@ -172,7 +170,6 @@ public class PreLoginButtons extends BaseClass {
 
     public String ClickLoginButton() {
         try {
-            Thread.sleep(5000);
             LoginButton.click();
 
         } catch (Exception e) {
@@ -186,7 +183,6 @@ public class PreLoginButtons extends BaseClass {
 
     public String RegisterUser() {
         try {
-            Thread.sleep(5000);
             {
                 int number = getRandomNumber();
                 DisplayName.sendKeys("Earl " + number);
@@ -194,11 +190,10 @@ public class PreLoginButtons extends BaseClass {
                 Password.sendKeys("qapass1234");
                 ConfirmPassword.sendKeys("qapass1234");
                 AcceptTerms.click();
-                Thread.sleep(5000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("window.scrollBy(0,250)", "");
                 Continuebtn.click();
-                Thread.sleep(5000);
+                new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(VerifyAccMsg));
                 String VerifyEmailMessage = VerifyAccMsg.getText();
                 Assert.assertEquals(VerifyEmailMessage, "Verify Your Account", "Verify Your Account message is not displayed correctly");
                 System.out.println("Verify your account message has been displayed correctly, pending account verification graphql call");

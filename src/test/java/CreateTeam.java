@@ -22,7 +22,6 @@ public class CreateTeam extends BaseClass {
             System.out.println(pgeobj.EnterUsername());
             System.out.println(pgeobj.EnterPassword());
             System.out.println(pgeobj.ClickLoginButton());
-            Thread.sleep(5000);
             System.out.println(Logbtns.LoginCheck());
             System.out.println(Logbtns.CreateTeam());
             driver.close();

@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.util.Random;
 
@@ -55,10 +57,9 @@ public class PostLoginButtons extends BaseClass {
 
     public String LoginCheck() {
         try {
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Coins));
             if (Coins.isDisplayed()) {
                 System.out.println("Coins displayed, user logged in");
-
-                Thread.sleep(5000);
             } else {
                 System.out.println("Coins not displayed, user login failed");
             }
@@ -84,8 +85,6 @@ public class PostLoginButtons extends BaseClass {
             Assert.assertEquals(TeamcreationMessage, "Your team has been successfully created.", "Team creation message is not displayed correctly");
             System.out.println("Team creation message displayed in popup is: " + TeamcreationMessage);
 
-            Thread.sleep(5000);
-
 
         } catch (Exception e) {
 
@@ -96,11 +95,11 @@ public class PostLoginButtons extends BaseClass {
 
     public String JoinEvent() {
         try {
-            Thread.sleep(5000);
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(JoinNowbtn));
             JoinNowbtn.click();
-            Thread.sleep(2000);
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Confirmbtn));
             Confirmbtn.click();
-            Thread.sleep(2000);
+            new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(Joinevntsuccessmsg));
         } catch (Exception e) {
         }
         String ConfirmJoinMsg = Joinevntsuccessmsg.getText();
