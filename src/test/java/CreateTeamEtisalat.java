@@ -13,6 +13,7 @@ public class CreateTeamEtisalat extends BaseClass {
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
             Logbtns = PageFactory.initElements(driver, PostLoginButtons.class);
+            util = PageFactory.initElements(driver, Utils.class);
             driver.get("https://qa-hive-etisalat-cicd.swarmio.gg/");
             driver.manage().window().maximize();
             pgeobj.Clicklogin();

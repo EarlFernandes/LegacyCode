@@ -14,6 +14,7 @@ public class HomePageSmokeTestEtisalat extends BaseClass {
 
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
+            util = PageFactory.initElements(driver, Utils.class);
             driver.get("https://qa-hive-etisalat-cicd.swarmio.gg/");
             driver.manage().window().maximize();
             pgeobj.ClickWatch();

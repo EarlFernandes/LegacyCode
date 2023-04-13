@@ -15,6 +15,7 @@ public class JoinTournamentEtisalat extends BaseClass {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
             Logbtns = PageFactory.initElements(driver, PostLoginButtons.class);
             admbtns = PageFactory.initElements(driver, AdminButtons.class);
+            util = PageFactory.initElements(driver, Utils.class);
             String username = "swarmioadmin";
             String password = "FvtJ3ypjAsJ07bP";
             driver.get("https://" + username + ":" + password + "@" + "qa-hive-etisalat-admin-cicd.swarmio.gg");

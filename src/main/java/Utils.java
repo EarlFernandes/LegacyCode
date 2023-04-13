@@ -22,6 +22,10 @@ public class Utils extends BaseClass {
         // Generate and return Random number with decimal
         return rand.nextInt();
     }
+    public Utils(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     /**
      * Write the current page source to a file to download & inspect

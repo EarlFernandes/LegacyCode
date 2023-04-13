@@ -13,6 +13,7 @@ public class HomePageSmokeTest extends BaseClass {
 
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
+            util = PageFactory.initElements(driver, Utils.class);
             driver.get("https://qa-hive-swarmio-cicd.swarmio.gg/");
             driver.manage().window().maximize();
             pgeobj.ClickWatch();

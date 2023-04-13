@@ -16,6 +16,7 @@ public class HomePageSmokeTestOoredoo extends BaseClass {
 
         try {
             pgeobj = PageFactory.initElements(driver, PreLoginButtons.class);
+            util = PageFactory.initElements(driver, Utils.class);
             driver.get("https://qa-hive-ooredoo-cicd.swarmio.gg/");
             driver.manage().window().maximize();
             pgeobj.ClickWatch();

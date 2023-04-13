@@ -14,6 +14,7 @@ public class CreateTournamentGlobe extends BaseClass {
 
         try {
             admbtns = PageFactory.initElements(driver, AdminButtons.class);
+            util = PageFactory.initElements(driver, Utils.class);
             String username = "swarmioadmin";
             String password = "FvtJ3ypjAsJ07bP";
             driver.get("https://" +username +":" +password +"@"+ "qa-hive-globe-admin-cicd.swarmio.gg");
