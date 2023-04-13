@@ -7,6 +7,7 @@ public class CreateTournamentOoredoo extends BaseClass {
     public PostLoginButtons Logbtns;
 
     public AdminButtons admbtns;
+    public Utils util;
 
     @Test
     public void TournamentCreate() {
@@ -21,6 +22,7 @@ public class CreateTournamentOoredoo extends BaseClass {
             driver.close();
         } catch (Exception e) {
             System.out.println(e);
+            util.writeCurrentPageSource("TournamentCreateOoredooFail.html");
         }
     }
 }

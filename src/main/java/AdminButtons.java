@@ -18,6 +18,9 @@ import java.util.Random;
 
 public class AdminButtons extends BaseClass {
 
+    public Utils util;
+
+
     // Login Webelements
     public float getRandomNumber() {
         // create instance of Random class
@@ -227,7 +230,7 @@ public class AdminButtons extends BaseClass {
             System.out.println("RegistrationClose time has not been entered");
         }
 
-        writeCurrentPageSource("CreateEvent(firstPageTab).html");
+        util.writeCurrentPageSource("CreateEvent(firstPageTab).html");
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(DetailsTab));
         if (DetailsTab.isDisplayed()) {
@@ -300,42 +303,8 @@ public class AdminButtons extends BaseClass {
         }
 
         Thread.sleep(5000); // wait (hopefully) for the event to be saved
-        writeCurrentPageSource("afterSave.html");
+        util.writeCurrentPageSource("afterSave.html");
         return getNewlySavedEventID();
-    }
-
-    /**
-     * Write the current page source to a file to download & inspect
-     * 
-     * @param fileName the name of the file to write to
-     */
-    private void writeCurrentPageSource(String fileName) {
-        System.out.println(String.format("------------ writing page source to fileName: %s -----------", fileName));
-        // write this out to a file in the root directory
-        try {
-            // get the current project directory
-            String currentDir = System.getProperty("user.dir");
-            System.out.println("currentDir: " + currentDir);
-            String exportPath = currentDir + "/exports/";
-
-            // create a new directory called /exports (if necessary)
-            File dir = new File(exportPath);
-            if (!dir.exists()) {
-                dir.mkdir();
-            }
-
-            // write out the HTML
-            FileWriter fw = new FileWriter(exportPath + fileName);
-            fw.write(driver.getPageSource());
-            fw.close();
-            
-            // get a screenshot from the selenium webdriver
-            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File(exportPath + fileName + "_screenshot.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
     public String getNewlySavedEventID() {

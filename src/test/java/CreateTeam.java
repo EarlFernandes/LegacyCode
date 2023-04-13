@@ -9,6 +9,7 @@ import java.io.IOException;
 public class CreateTeam extends BaseClass {
     public PreLoginButtons pgeobj;
     public PostLoginButtons Logbtns;
+    public Utils util;
 
     @Test
     public void TeamCreate() {
@@ -27,6 +28,7 @@ public class CreateTeam extends BaseClass {
             driver.close();
         } catch (Exception e) {
             System.out.println(e);
+            util.writeCurrentPageSource("TeamCreateFail.html");
         }
     }
 }

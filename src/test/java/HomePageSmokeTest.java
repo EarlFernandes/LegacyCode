@@ -1,11 +1,12 @@
-        import org.openqa.selenium.support.PageFactory;
-        import org.openqa.selenium.support.ui.ExpectedConditions;
-        import org.openqa.selenium.support.ui.WebDriverWait;
-        import org.testng.Assert;
-        import org.testng.annotations.Test;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-        public class HomePageSmokeTest extends BaseClass{
-        public PreLoginButtons pgeobj;
+public class HomePageSmokeTest extends BaseClass {
+    public PreLoginButtons pgeobj;
+    public Utils util;
 
     @Test
     public void HomePageButtons() {
@@ -39,9 +40,9 @@
             String Registerpage = pgeobj.ClickRegister();
             Assert.assertEquals(Registerpage, "Swarmio Hive", "Register page didn't load correctly or in time");
             driver.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
+            util.writeCurrentPageSource("HomepageSmokeTestFail.html");
         }
     }
 }

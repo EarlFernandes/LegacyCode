@@ -5,8 +5,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-        public class HomePageSmokeTestGlobe extends BaseClass{
-        public PreLoginButtons pgeobj;
+public class HomePageSmokeTestGlobe extends BaseClass {
+    public PreLoginButtons pgeobj;
+    public Utils util;
 
     @Test
     public void HomePageButtons() {
@@ -40,9 +41,9 @@ import org.testng.annotations.Test;
             String Registerpage = pgeobj.ClickRegister();
             Assert.assertEquals(Registerpage, "Globe Gamer Grounds", "Globe's Register page didn't load correctly or in time");
             driver.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
+            util.writeCurrentPageSource("HomepageSmokeTestGlobeFail.html");
         }
     }
 }

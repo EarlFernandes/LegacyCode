@@ -6,6 +6,8 @@ public class JoinTournament extends BaseClass {
     public PreLoginButtons pgeobj;
     public PostLoginButtons Logbtns;
     public AdminButtons admbtns;
+    public Utils util;
+
 
     @Test
     public void TournamentJoin() {
@@ -16,7 +18,7 @@ public class JoinTournament extends BaseClass {
             admbtns = PageFactory.initElements(driver, AdminButtons.class);
             String username = "swarmioadmin";
             String password = "FvtJ3ypjAsJ07bP";
-            driver.get("https://" +username +":" +password +"@"+ "qa-hive-swarmio-admin-cicd.swarmio.gg");
+            driver.get("https://" + username + ":" + password + "@" + "qa-hive-swarmio-admin-cicd.swarmio.gg");
             driver.manage().window().maximize();
             String eventID = admbtns.EventCreate();
             driver.get("https://qa-hive-swarmio-cicd.swarmio.gg/");
@@ -31,6 +33,7 @@ public class JoinTournament extends BaseClass {
             driver.close();
         } catch (Exception e) {
             System.out.println(e);
+            util.writeCurrentPageSource("TournamentJoinFail.html");
         }
     }
 }

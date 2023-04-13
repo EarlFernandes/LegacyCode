@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 public class RegisterNewUser extends BaseClass {
     public PreLoginButtons pgeobj;
     public PostLoginButtons Logbtns;
+    public Utils util;
 
     @Test
     public void UserCreate() {
@@ -19,6 +20,7 @@ public class RegisterNewUser extends BaseClass {
             driver.close();
         } catch (Exception e) {
             System.out.println(e);
+            util.writeCurrentPageSource("RegisterNewUserFail.html");
         }
     }
 }

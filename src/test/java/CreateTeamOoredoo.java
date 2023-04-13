@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 public class CreateTeamOoredoo extends BaseClass {
     public PreLoginButtons pgeobj;
     public PostLoginButtons Logbtns;
+    public Utils util;
 
     @Test
     public void TeamCreate() {
@@ -23,6 +24,7 @@ public class CreateTeamOoredoo extends BaseClass {
             System.out.println(Logbtns.CreateTeam());
         } catch (Exception e) {
             System.out.println(e);
+            util.writeCurrentPageSource("TeamCreateGlobeFail.html");
         }
     }
 }
