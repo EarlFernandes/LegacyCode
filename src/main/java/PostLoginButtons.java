@@ -98,7 +98,9 @@ public class PostLoginButtons extends BaseClass {
             new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(JoinNowbtn));
             JoinNowbtn.click();
             new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Confirmbtn));
+            Thread.sleep(3000);
             Confirmbtn.click();
+            Thread.sleep(3000);
             new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(Joinevntsuccessmsg));
         } catch (Exception e) {
         }
