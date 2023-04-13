@@ -124,6 +124,7 @@ public class AdminButtons extends BaseClass {
     }
 
     public String EventCreate() throws InterruptedException {
+        util = PageFactory.initElements(driver, Utils.class);
         Username.sendKeys("earl@swarmio.media");
         Password.sendKeys("qapass1234");
         SignIn.click();
