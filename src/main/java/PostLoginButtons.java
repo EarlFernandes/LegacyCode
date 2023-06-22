@@ -85,7 +85,6 @@ public class PostLoginButtons extends BaseClass {
             Assert.assertEquals(TeamcreationMessage, "Your team has been successfully created.", "Team creation message is not displayed correctly");
             System.out.println("Team creation message displayed in popup is: " + TeamcreationMessage);
 
-
         } catch (Exception e) {
 
         }

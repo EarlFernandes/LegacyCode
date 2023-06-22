@@ -115,8 +115,8 @@ public class AdminButtons extends BaseClass {
     // @FindBy(xpath = "//*[text() = 'Id']/parent::*/following-sibling::*/span")
     @FindBy(xpath = "//*[@id='react-admin-title']/span")
     // @FindBy(xpath = "//*[contains(@class, 'MuiTypography-root jss116
-    // MuiTypography-h6 MuiTypography-colorInherit')]/span")
-    WebElement TitleElement; // an element that we're hoping has the event ID in it
+            // MuiTypography-h6 MuiTypography-colorInherit')]/span")
+            WebElement TitleElement; // an element that we're hoping has the event ID in it
 
     public AdminButtons(WebDriver driver) {
         this.driver = driver;
@@ -124,189 +124,197 @@ public class AdminButtons extends BaseClass {
     }
 
     public String EventCreate() throws InterruptedException {
-        util = PageFactory.initElements(driver, Utils.class);
-        Username.sendKeys("earl@swarmio.media");
-        Password.sendKeys("qapass1234");
-        SignIn.click();
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CreateEvent));
-        // Events.click();
-        // Thread.sleep(5000);
-        CreateEvent.click();
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(ParticipantType));
+        try {
+            util = PageFactory.initElements(driver, Utils.class);
+            Username.sendKeys("earl@swarmio.media");
+            Password.sendKeys("qapass1234");
+            SignIn.click();
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CreateEvent));
+            // Events.click();
+            // Thread.sleep(5000);
+            CreateEvent.click();
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(ParticipantType));
 
-        if (ParticipantType.isDisplayed()) {
-            // Select sel = new Select(ParticipantType);
-            // sel.selectByVisibleText("Individual");
-            ParticipantType.sendKeys(Keys.ENTER);
-            // System.out.println("ParticipantType dropdown opened");
-        } else {
-            System.out.println("ParticipantType dropdown not opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(IndividualParticipantType));
-        if (IndividualParticipantType.isDisplayed()) {
-            IndividualParticipantType.sendKeys(Keys.ENTER);
-            System.out.println("IndividualParticipantType from dropdown has been selected");
-        } else {
-            System.out.println("IndividualParticipantType from dropdown has not been selected");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CompetitionType));
-        if (CompetitionType.isDisplayed()) {
-            CompetitionType.click();
-            System.out.println("CompetitionType dropdown is opened");
-        } else {
-            System.out.println("CompetitionType dropdown is not opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(TournamentType));
-        if (TournamentType.isDisplayed()) {
-            TournamentType.click();
-            System.out.println("TournamentType is selected from dropdown");
-        } else {
-            System.out.println("TournamentType is not selected from dropdown");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(TournamentFormat));
-        if (TournamentFormat.isDisplayed()) {
-            TournamentFormat.click();
-            System.out.println("TournamentFormat dropdown is opened");
-        } else {
-            System.out.println("TournamentFormat dropdown is not opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(SingleElimination));
-        if (SingleElimination.isDisplayed()) {
-            SingleElimination.click();
-            System.out.println("SingleElimination is selected from dropdown");
-        } else {
-            System.out.println("SingleElimination is not selected from dropdown");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Game));
-        if (Game.isDisplayed()) {
-            Game.click();
-            System.out.println("Game dropdown has been opened");
-        } else {
-            System.out.println("Game dropdown has not been opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(LeagueofLegends));
-        if (LeagueofLegends.isDisplayed()) {
-            LeagueofLegends.click();
-            System.out.println("LeagueofLegends has been selected from dropdown");
-        } else {
-            System.out.println("LeagueofLegends has not been selected from dropdown");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(GameAccType));
-        if (GameAccType.isDisplayed()) {
-            GameAccType.click();
-            System.out.println("GameAccType dropdown has been opened");
-        } else {
-            System.out.println("GameAccType dropdown has not been opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(GameAccTypeID));
-        if (GameAccTypeID.isDisplayed()) {
-            GameAccTypeID.click();
-            System.out.println("GameAccTypeID has been selected from dropdown");
-        } else {
-            System.out.println("GameAccTypeID has not been selected from dropdown");
-        }
+            if (ParticipantType.isDisplayed()) {
+                // Select sel = new Select(ParticipantType);
+                // sel.selectByVisibleText("Individual");
+                ParticipantType.sendKeys(Keys.ENTER);
+                // System.out.println("ParticipantType dropdown opened");
+            } else {
+                System.out.println("ParticipantType dropdown not opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(IndividualParticipantType));
+            if (IndividualParticipantType.isDisplayed()) {
+                IndividualParticipantType.sendKeys(Keys.ENTER);
+                System.out.println("IndividualParticipantType from dropdown has been selected");
+            } else {
+                System.out.println("IndividualParticipantType from dropdown has not been selected");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CompetitionType));
+            if (CompetitionType.isDisplayed()) {
+                CompetitionType.click();
+                System.out.println("CompetitionType dropdown is opened");
+            } else {
+                System.out.println("CompetitionType dropdown is not opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(TournamentType));
+            if (TournamentType.isDisplayed()) {
+                TournamentType.click();
+                System.out.println("TournamentType is selected from dropdown");
+            } else {
+                System.out.println("TournamentType is not selected from dropdown");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(TournamentFormat));
+            if (TournamentFormat.isDisplayed()) {
+                TournamentFormat.click();
+                System.out.println("TournamentFormat dropdown is opened");
+            } else {
+                System.out.println("TournamentFormat dropdown is not opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(SingleElimination));
+            if (SingleElimination.isDisplayed()) {
+                SingleElimination.click();
+                System.out.println("SingleElimination is selected from dropdown");
+            } else {
+                System.out.println("SingleElimination is not selected from dropdown");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Game));
+            if (Game.isDisplayed()) {
+                Game.click();
+                System.out.println("Game dropdown has been opened");
+            } else {
+                System.out.println("Game dropdown has not been opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(LeagueofLegends));
+            if (LeagueofLegends.isDisplayed()) {
+                LeagueofLegends.click();
+                System.out.println("LeagueofLegends has been selected from dropdown");
+            } else {
+                System.out.println("LeagueofLegends has not been selected from dropdown");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(GameAccType));
+            if (GameAccType.isDisplayed()) {
+                GameAccType.click();
+                System.out.println("GameAccType dropdown has been opened");
+            } else {
+                System.out.println("GameAccType dropdown has not been opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(GameAccTypeID));
+            if (GameAccTypeID.isDisplayed()) {
+                GameAccTypeID.click();
+                System.out.println("GameAccTypeID has been selected from dropdown");
+            } else {
+                System.out.println("GameAccTypeID has not been selected from dropdown");
+            }
 
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(StartTime));
-        if (StartTime.isDisplayed()) {
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(StartTime));
+            if (StartTime.isDisplayed()) {
 //            StartTime.sendKeys("002023-12-310200AM"); //For running it local
-            StartTime.sendKeys("12310020230200AM"); // For running it on docker image
-            System.out.println("StartTime has been entered");
-        } else {
-            System.out.println("StartTime has not been entered");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationOpen));
-        if (RegistrationOpen.isDisplayed()) {
+                StartTime.sendKeys("12310020230200AM"); // For running it on docker image
+                System.out.println("StartTime has been entered");
+            } else {
+                System.out.println("StartTime has not been entered");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationOpen));
+            if (RegistrationOpen.isDisplayed()) {
 //            RegistrationOpen.sendKeys("002023-03-270200AM"); //For running it local
-            RegistrationOpen.sendKeys( "01310020230200AM"); // For running it on docker image
-            System.out.println("RegistrationOpen time has been entered");
-        } else {
-            System.out.println("RegistrationOpen time has not been entered");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationClose));
-        if (RegistrationClose.isDisplayed()) {
+                RegistrationOpen.sendKeys("01310020230200AM"); // For running it on docker image
+                System.out.println("RegistrationOpen time has been entered");
+            } else {
+                System.out.println("RegistrationOpen time has not been entered");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegistrationClose));
+            if (RegistrationClose.isDisplayed()) {
 //            RegistrationClose.sendKeys("002023-12-310100AM"); //For running it local
-            RegistrationClose.sendKeys("12310020230100AM"); // For running it on docker image
-            System.out.println("RegistrationClose time has been entered");
-        } else {
-            System.out.println("RegistrationClose time has not been entered");
-        }
+                RegistrationClose.sendKeys("12310020230100AM"); // For running it on docker image
+                System.out.println("RegistrationClose time has been entered");
+            } else {
+                System.out.println("RegistrationClose time has not been entered");
+            }
 
-        util.writeCurrentPageSource("CreateEvent(firstPageTab).html");
+            util.writeCurrentPageSource("CreateEvent(firstPageTab).html");
 
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(DetailsTab));
-        if (DetailsTab.isDisplayed()) {
-            DetailsTab.click();
-            System.out.println("DetailsTab has been opened");
-        } else {
-            System.out.println("DetailsTab has not been opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Category));
-        if (Category.isDisplayed()) {
-            Category.click();
-            System.out.println("Category dropdown has been opened");
-        } else {
-            System.out.println("Category dropdown has not been opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CategoryType));
-        if (CategoryType.isDisplayed()) {
-            CategoryType.click();
-            System.out.println("CategoryType has been selected");
-        } else {
-            System.out.println("CategoryType has not been selected");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Region));
-        if (Region.isDisplayed()) {
-            Region.click();
-            System.out.println("Region dropdown has been opened");
-        } else {
-            System.out.println("Region dropdown has not been opened");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegionType));
-        if (RegionType.isDisplayed()) {
-            RegionType.click();
-            System.out.println("RegionType has been selected from dropdown");
-        } else {
-            System.out.println("RegionType has not been selected from dropdown");
-        }
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(LocalizedEventType));
-        if (LocalizedEventType.isDisplayed()) {
-            LocalizedEventType.click();
-            System.out.println("LocalizedEventType has been opened");
-        } else {
-            System.out.println("LocalizedEventType has not been opened");
-        }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(DetailsTab));
+            if (DetailsTab.isDisplayed()) {
+                DetailsTab.click();
+                System.out.println("DetailsTab has been opened");
+            } else {
+                System.out.println("DetailsTab has not been opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Category));
+            if (Category.isDisplayed()) {
+                Category.click();
+                System.out.println("Category dropdown has been opened");
+            } else {
+                System.out.println("Category dropdown has not been opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CategoryType));
+            if (CategoryType.isDisplayed()) {
+                CategoryType.click();
+                System.out.println("CategoryType has been selected");
+            } else {
+                System.out.println("CategoryType has not been selected");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Region));
+            if (Region.isDisplayed()) {
+                Region.click();
+                System.out.println("Region dropdown has been opened");
+            } else {
+                System.out.println("Region dropdown has not been opened");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(RegionType));
+            if (RegionType.isDisplayed()) {
+                RegionType.click();
+                System.out.println("RegionType has been selected from dropdown");
+            } else {
+                System.out.println("RegionType has not been selected from dropdown");
+            }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(LocalizedEventType));
+            if (LocalizedEventType.isDisplayed()) {
+                LocalizedEventType.click();
+                System.out.println("LocalizedEventType has been opened");
+            } else {
+                System.out.println("LocalizedEventType has not been opened");
+            }
 
-        DateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        Date date = new Date();
-        String date1 = dateformat.format(date);
+            DateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+            Date date = new Date();
+            String date1 = dateformat.format(date);
 
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(LocalizedName));
-        if (LocalizedName.isDisplayed()) {
-            LocalizedName.sendKeys("Event " + date1);
-            System.out.println("LocalizedName of the event has been added");
-        } else {
-            System.out.println("LocalizedName of the event has not been added");
-        }
-        String Localizednametext = LocalizedName.getText();
-        System.out.println("Localized name inputted value is " + Localizednametext);
-        Thread.sleep(5000);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,250)", "");
-        Thread.sleep(2000);
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Save));
-        if (Save.isDisplayed()) {
-            Save.click();
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(LocalizedName));
+            if (LocalizedName.isDisplayed()) {
+                LocalizedName.sendKeys("Event " + date1);
+                System.out.println("LocalizedName of the event has been added");
+            } else {
+                System.out.println("LocalizedName of the event has not been added");
+            }
+            String Localizednametext = LocalizedName.getText();
+            System.out.println("Localized name inputted value is " + Localizednametext);
+            Thread.sleep(5000);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,250)", "");
             Thread.sleep(2000);
-            // new WebDriverWait (driver,
-            // 60).until(ExpectedConditions.visibilityOf(ErrorOnSave));
-        } else {
-            System.out.println("Event has not been saved");
-        }
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(Save));
+            if (Save.isDisplayed()) {
+                Save.click();
+                Thread.sleep(2000);
+                // new WebDriverWait (driver,
+                // 60).until(ExpectedConditions.visibilityOf(ErrorOnSave));
+            } else {
+                System.out.println("Event has not been saved");
+            }
 
-        Thread.sleep(5000); // wait (hopefully) for the event to be saved
-        util.writeCurrentPageSource("afterSave.html");
+            Thread.sleep(5000); // wait (hopefully) for the event to be saved
+            util.writeCurrentPageSource("afterSave.html");
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
         return getNewlySavedEventID();
     }
+
+
 
     public String getNewlySavedEventID() {
         String Eventid = TitleElement.getText();
